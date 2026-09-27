@@ -2,7 +2,7 @@
 
 **This is the one file to keep in a consuming project.** Everything below is
 the substance; the reasoning, the recipes and the components live in the
-repository: https://github.com/UlrichKronvoldPrivate/hub-style-guide
+repository: https://github.com/building-blocks-online/hub-style-guide
 (public). Nothing else from that repository needs to be copied for this file
 to be useful, and nothing in it will resolve next to this file — that is
 expected.

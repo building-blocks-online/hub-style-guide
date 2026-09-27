@@ -3,7 +3,7 @@
 The house style shared by every hub app — tokens, components, canvas rules and
 UI copy — so a handful of separate projects read as one studio's work.
 
-> Lives at https://github.com/UlrichKronvoldPrivate/hub-style-guide — public,
+> Lives at https://github.com/building-blocks-online/hub-style-guide — public,
 > no access needed. Every path in this README and in `ADOPTING.md` is relative
 > to that repository's root. If you are reading a copy of these files inside another project, the
 > paths will not resolve there — see *Where the system lives* in

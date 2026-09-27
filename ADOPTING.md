@@ -2,7 +2,7 @@
 
 ## Where the system lives
 
-**Repository:** https://github.com/UlrichKronvoldPrivate/hub-style-guide
+**Repository:** https://github.com/building-blocks-online/hub-style-guide
 (public — no account or access needed to clone it, install it, or read it).
 
 Every path in this document is relative to the root of *that repository*.
@@ -115,7 +115,7 @@ the repository is needed by a consuming project:
 | The guide | `ADOPTING.md` (this file) | your docs — and note that it now points at files you did not copy |
 
 ```bash
-git clone --depth 1 https://github.com/UlrichKronvoldPrivate/hub-style-guide.git /tmp/hub
+git clone --depth 1 https://github.com/building-blocks-online/hub-style-guide.git /tmp/hub
 cp /tmp/hub/skills/hub-design-system/references/tokens.css  src/styles/
 cp /tmp/hub/skills/hub-design-system/references/layout.css  src/styles/
 cp -r /tmp/hub/src/components/Button src/components/
@@ -123,7 +123,7 @@ git -C /tmp/hub rev-parse --short HEAD   # write this down next to the files
 ```
 
 ```powershell
-git clone --depth 1 https://github.com/UlrichKronvoldPrivate/hub-style-guide.git $env:TEMP\hub
+git clone --depth 1 https://github.com/building-blocks-online/hub-style-guide.git $env:TEMP\hub
 Copy-Item $env:TEMP\hub\skills\hub-design-system\references\tokens.css src\styles\
 Copy-Item $env:TEMP\hub\skills\hub-design-system\references\layout.css src\styles\
 Copy-Item -Recurse $env:TEMP\hub\src\components\Button src\components\
@@ -135,7 +135,7 @@ git -C $env:TEMP\hub rev-parse --short HEAD
 public, so this needs no credentials on the machine running `npm install`.
 
 ```bash
-npm install github:UlrichKronvoldPrivate/hub-style-guide#<commit-or-tag>
+npm install github:building-blocks-online/hub-style-guide#<commit-or-tag>
 ```
 
 ```css
