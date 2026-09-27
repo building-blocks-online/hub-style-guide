@@ -75,11 +75,14 @@
   flex-direction: column;
   min-height: 0;
 }
+/* The app mark and the app's name, on one line. The tagline belongs on the
+   sign-in sheet, not here. */
 .hub-shell__brand {
   height: var(--hub-height-bar);
-  display: flex; align-items: center;
+  display: flex; align-items: center; gap: 10px;
   padding-inline: var(--hub-space-5);
-  font-weight: 700; letter-spacing: -.02em;
+  font-weight: 600; letter-spacing: -.02em;
+  white-space: nowrap;
   border-bottom: 1px solid var(--hub-color-line);
 }
 .hub-shell__menu { padding: var(--hub-space-4) var(--hub-space-3); display: flex; flex-direction: column; gap: 2px; flex: 1; }
@@ -105,6 +108,29 @@
   font: var(--hub-text-body-sm);
 }
 
+/* The person, once: a neutral disc, the display name, the role. The email
+   stands in only when there is no name, and is never shown twice. */
+.hub-person { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+.hub-person__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hub-person__name,
+.hub-person__role { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hub-person__name { font: var(--hub-text-label); color: var(--hub-color-ink); }
+.hub-person__role { font: var(--hub-text-caption); color: var(--hub-color-ink-muted); }
+
+/* An initials disc: the person, a table's "who" column, the account menu.
+   Never a brand colour — people are not status. */
+.hub-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 0; padding: 0;
+  background: var(--hub-color-surface-sunken);
+  display: grid; place-content: center;
+  font: var(--hub-text-caption); font-weight: 600;
+  color: var(--hub-color-ink-muted);
+  flex: none;
+}
+button.hub-avatar { cursor: pointer; }
+.hub-shell__tools .hub-avatar { width: 38px; height: 38px; }
+
 .hub-shell__main { grid-area: main; min-width: 0; }
 
 @media (max-width: 720px) {
@@ -123,6 +149,10 @@
   }
   .hub-shell__nav[data-open="true"] { transform: none; }
   .hub-search { display: none; }
+  /* The trail collapses to where you are, on one line. */
+  .hub-crumb { min-width: 0; }
+  .hub-crumb > :not(:last-child) { display: none; }
+  .hub-crumb b { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 }
 
 /* ── Shared page furniture ─────────────────────────────────── */
@@ -247,6 +277,100 @@
 }
 .hub-page--reading p,
 .hub-page--reading li { max-width: var(--hub-width-prose); }
+
+/* ── Across the ecosystem ──────────────────────────────────────
+   The hub apps are one family. These pieces are drawn the same way in
+   every app, so moving between apps feels like moving between rooms of
+   one building. layout.md, "Across the ecosystem", has the rules. */
+
+/* The app mark: an ink tile with the app's glyph (a Boxicon). The same
+   mark in the sidebar, the app switcher, the home app's catalog and the
+   sign-in sheet. An app without a glyph gets its initial, never nothing. */
+.hub-mark {
+  width: var(--hub-mark-size); height: var(--hub-mark-size);
+  border-radius: var(--hub-radius-control);
+  background: var(--hub-mark-bg); color: var(--hub-mark-ink);
+  display: grid; place-content: center; flex: none;
+  font-size: 1.125rem; font-weight: 600; line-height: 1;
+}
+.hub-mark--lg {
+  width: var(--hub-mark-size-lg); height: var(--hub-mark-size-lg);
+  border-radius: var(--hub-radius-sheet);
+  font-size: 1.875rem;
+}
+
+/* Help and feedback: one round ink button, bottom-right, in every app.
+   Canvas pages give both bottom corners to React Flow, so there it steps
+   aside and the bar carries a round help button instead. */
+.hub-help {
+  position: fixed; right: var(--hub-space-5); bottom: var(--hub-space-5); z-index: 50;
+  width: var(--hub-help-size); height: var(--hub-help-size);
+  border: 0; border-radius: 50%; padding: 0; cursor: pointer;
+  background: var(--hub-button-primary-bg); color: var(--hub-button-primary-ink);
+  display: grid; place-content: center; font-size: 1.375rem;
+}
+:root:has(.hub-page--canvas) .hub-help { display: none; }
+
+/* The app switcher: a round grid-alt button in the bar opens this sheet.
+   Built on the native popover attribute; the sheet hangs under the bar at
+   the right, below the button that opened it. Rows read like nav items. */
+.hub-switcher {
+  position: fixed; inset: auto;
+  top: calc(var(--hub-height-bar) + var(--hub-space-2)); right: var(--hub-space-5);
+  width: var(--hub-switcher-width); margin: 0; padding: var(--hub-space-2);
+  background: var(--hub-color-surface); color: var(--hub-color-ink);
+  border: 1px solid var(--hub-color-line); border-radius: var(--hub-radius-sheet);
+}
+.hub-switcher__label { margin: var(--hub-space-2) 10px var(--hub-space-2); font: var(--hub-text-caption); color: var(--hub-color-ink-muted); }
+.hub-switcher__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.hub-switcher__app {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--hub-space-3);
+  padding: 8px 10px; border-radius: var(--hub-radius-control);
+  color: var(--hub-color-ink); text-decoration: none;
+}
+.hub-switcher__app:hover { background: var(--hub-color-surface-sunken); }
+.hub-switcher__name { font: var(--hub-text-label); display: block; }
+.hub-switcher__desc { font: var(--hub-text-caption); color: var(--hub-color-ink-muted); display: block; margin-top: 3px;
+                      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hub-switcher__app[aria-current="page"] { background: var(--hub-color-ink); color: var(--hub-color-ink-on-ink); }
+.hub-switcher__app[aria-current="page"] .hub-switcher__desc { color: var(--hub-color-ink-on-ink); }
+.hub-switcher__app[aria-current="page"] .hub-mark { background: var(--hub-mark-ink); color: var(--hub-mark-bg); }
+/* Live status, when the app knows it. The shape changes with the state,
+   as on a chip, so it survives greyscale. Always pair it with a label. */
+.hub-switcher__status { width: 7px; height: 7px; border-radius: 50%; background: var(--hub-color-success); }
+.hub-switcher__status[data-status="warn"] { background: var(--hub-color-warning); border-radius: 1px; transform: rotate(45deg); }
+.hub-switcher__status[data-status="fail"] { background: var(--hub-color-danger); border-radius: 1px; }
+.hub-switcher__status[data-status="unknown"] { background: var(--hub-color-line-strong); }
+@media (max-width: 720px) {
+  .hub-switcher { right: var(--hub-space-4); }   /* the 16px gutter, both sides */
+}
+
+/* The sign-in sheet: the first screen of every app, identical in all of
+   them. One sheet on the ground; the mark, the name, one line, one action,
+   then the way to read more and the theme. */
+.hub-signin {
+  min-height: 100dvh;
+  display: grid; place-items: center;
+  padding: var(--hub-space-4);
+  background: var(--hub-color-ground);
+}
+.hub-signin__sheet {
+  width: var(--hub-signin-width);
+  display: flex; flex-direction: column; align-items: center; gap: var(--hub-space-4);
+  text-align: center;
+  padding: var(--hub-space-7) var(--hub-space-6);
+  background: var(--hub-color-surface);
+  border: 1px solid var(--hub-color-line);
+  border-radius: var(--hub-radius-sheet);
+}
+.hub-signin__title { font: var(--hub-text-display-2); letter-spacing: var(--hub-tracking-display-2); margin: var(--hub-space-2) 0 0; text-wrap: balance; }
+.hub-signin__lede { font: var(--hub-text-body); color: var(--hub-color-ink-muted); margin: 0; max-width: 34ch; text-wrap: pretty; }
+/* the one action: full width, and a 44px touch target */
+.hub-signin__action { width: 100%; min-height: 44px; justify-content: center; margin-top: var(--hub-space-3); }
+.hub-signin__note { font: var(--hub-text-caption); color: var(--hub-color-ink-muted); margin: var(--hub-space-2) 0 0; }
+@media (max-width: 720px) {
+  .hub-signin__sheet { padding: var(--hub-space-6) var(--hub-space-5); }
+}
 
 /* ── Density ───────────────────────────────────────────────── */
 [data-density="compact"] { font: var(--hub-text-body-sm); }

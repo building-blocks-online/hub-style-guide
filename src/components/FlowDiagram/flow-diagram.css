@@ -1,0 +1,86 @@
+/* An explanatory diagram: nodes of one width in one row, joined by hairline
+   edges. The node the reader is looking at is inverted to ink — the same
+   "here" as the current nav item. Tone rides on a node's left edge; a node
+   is never filled with a tone. */
+
+.hub-flow-figure { margin: 0; }
+
+.hub-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.hub-flow__node {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--hub-space-4);
+  background: var(--hub-color-surface);
+  color: var(--hub-color-ink);
+  border: 1px solid var(--hub-color-line-strong);
+  border-radius: var(--hub-radius-control);
+}
+.hub-flow__name { font: var(--hub-text-label); }
+.hub-flow__note { font: var(--hub-text-caption); color: var(--hub-color-ink-muted); }
+
+.hub-flow__node[aria-current="step"] {
+  background: var(--hub-color-ink);
+  border-color: var(--hub-color-ink);
+  color: var(--hub-color-ink-on-ink);
+}
+.hub-flow__node[aria-current="step"] .hub-flow__note { color: var(--hub-color-ink-on-ink); }
+
+.hub-flow__node[data-tone="success"] { border-left: var(--hub-tone-edge) solid var(--hub-color-success); }
+.hub-flow__node[data-tone="warning"] { border-left: var(--hub-tone-edge) solid var(--hub-color-warning); }
+
+/* The edge: a hairline with a chevron drawn from a rotated border corner,
+   the same mark as the breadcrumb's. */
+.hub-flow__edge {
+  flex: 0 0 var(--hub-space-6);
+  align-self: center;
+  height: 1px;
+  position: relative;
+  background: var(--hub-color-line-strong);
+}
+.hub-flow__edge::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--hub-color-ink-subtle);
+  border-top: 1.5px solid var(--hub-color-ink-subtle);
+  transform: rotate(45deg);
+}
+
+.hub-flow__loop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: var(--hub-space-3) 0 0;
+  font: var(--hub-text-caption);
+  color: var(--hub-color-ink-muted);
+}
+
+.hub-flow__caption {
+  font: var(--hub-text-caption);
+  color: var(--hub-color-ink-muted);
+  margin: var(--hub-space-3) 0 0;
+  max-width: var(--hub-width-prose);
+}
+
+@media (max-width: 720px) {
+  .hub-flow { flex-direction: column; }
+  .hub-flow__edge {
+    flex-basis: var(--hub-space-5);
+    width: 1px;
+    height: auto;
+  }
+  .hub-flow__edge::after { top: auto; bottom: 0; right: -3px; transform: rotate(135deg); }
+}

@@ -1,6 +1,6 @@
 <title>Kridt</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* ── Kridt: white sheet, hairline grid, colour only where it means something ──
    Kridt is Danish for chalk. One flat ground, white surfaces that touch and
@@ -10,7 +10,7 @@
 :root{
   --ground:#F2F4F1; --paper:#FFFFFF; --paper-2:#F5F7F4; --band:#EDF0EC;
   --line:#E3E7E1; --line-2:#CFD5CD;
-  --ink:#132420; --ink-2:#5B675F; --ink-3:#8A948C;
+  --ink:#132420; --ink-2:#5B675F; --ink-3:#636F68;
   --action:#0F6C86; --action-text:#0A5062;
   --ok:#23684A; --ok-soft:#E3F1E9; --info:#0F6C86; --info-soft:#E1EEF2; --warn:#8A5D07; --warn-soft:#F7ECD3; --bad:#B33A2B; --bad-soft:#F8E3DF;
   --r:12px; --r-sm:8px;
@@ -20,7 +20,7 @@
 :root[data-theme="dark"]{
   --ground:#0E1B18; --paper:#16221E; --paper-2:#1B2823; --band:#1F2D28;
   --line:#26332E; --line-2:#3A4842;
-  --ink:#EAF0EA; --ink-2:#A9B6AE; --ink-3:#778780;
+  --ink:#EAF0EA; --ink-2:#A9B6AE; --ink-3:#869690;
   --action:#5FD0DC; --action-text:#A9ECF1;
   --ok:#6FCB9F; --ok-soft:#173A2B; --info:#5FD0DC; --info-soft:#12343B; --warn:#E9B44C; --warn-soft:#3B2D0D; --bad:#FF8F7A; --bad-soft:#3E1C17;
 }
@@ -42,7 +42,7 @@ a{color:var(--action-text);text-underline-offset:3px}
 /* ── the sheet: one white surface, subdivided by hairlines ────────────── */
 .sheet{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:232px minmax(0,1fr)}
 .side{border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:760px}
-.brand{height:64px;display:flex;align-items:center;padding:0 22px;font-weight:700;letter-spacing:-.02em;font-size:1.05rem;border-bottom:1px solid var(--line)}
+.brand{height:64px;display:flex;align-items:center;padding:0 22px;font-weight:600;letter-spacing:-.02em;font-size:1.05rem;border-bottom:1px solid var(--line)}
 .side nav{padding:14px 12px;display:flex;flex-direction:column;gap:2px;flex:1}
 .side h6{margin:12px 10px 6px;font-size:.7rem;font-weight:500;color:var(--ink-3)}
 .side a{display:flex;align-items:center;gap:10px;font-size:.875rem;font-weight:500;color:var(--ink-2);text-decoration:none;padding:9px 10px;border-radius:var(--r-sm)}

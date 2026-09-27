@@ -44,3 +44,9 @@ export const Invalid: Story = {
 export const Disabled: Story = {
   args: { label: 'Region', defaultValue: 'Hovedstaden', disabled: true },
 };
+
+/** The icon comes from a wrapper, so no padding utility can put it on top of the text. */
+export const WithIcon: Story = {
+  name: 'With an icon',
+  args: { label: 'Search graphs', icon: 'search', type: 'search', placeholder: 'Name or table ID' },
+};

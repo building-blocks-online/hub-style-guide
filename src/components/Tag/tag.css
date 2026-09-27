@@ -1,0 +1,25 @@
+/* A category, not a status. Where a chip says what state something is in,
+   a tag says what kind of thing it is: squarer than a chip, lined, never
+   filled and never coloured, so it can never be mistaken for state. */
+
+.hub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hub-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: var(--hub-text-caption);
+  font-weight: 500;
+  color: var(--hub-tag-ink);
+  padding: 2px 8px;
+  border: 1px solid var(--hub-tag-border);
+  border-radius: var(--hub-tag-radius);
+  white-space: nowrap;
+}

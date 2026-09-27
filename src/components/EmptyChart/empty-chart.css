@@ -1,0 +1,36 @@
+/* A chart waiting for data keeps its frame. The reader learns what will be
+   drawn here and where; a grey rectangle teaches nothing. Gridlines are
+   elements, not a gradient — Kridt has none. */
+
+.hub-empty-chart {
+  position: relative;
+  height: var(--hub-chart-height, 240px);
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--hub-color-line-strong);
+}
+
+.hub-empty-chart__grid {
+  position: absolute;
+  inset: 0 0 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.hub-empty-chart__grid span { border-top: 1px dashed var(--hub-color-line); }
+
+.hub-empty-chart__say {
+  position: relative;
+  max-width: 40ch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--hub-space-2);
+  text-align: center;
+  padding: var(--hub-space-3) var(--hub-space-4);
+  background: var(--hub-color-surface);
+}
+
+.hub-empty-chart__title { font: var(--hub-text-label); margin: 0; }
+.hub-empty-chart__text { font: var(--hub-text-caption); color: var(--hub-color-ink-muted); margin: 0; text-wrap: balance; }

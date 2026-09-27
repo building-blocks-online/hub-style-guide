@@ -13,6 +13,8 @@ import { DataTable } from '../components/DataTable/DataTable';
 import { StatRow } from '../components/StatRow/StatRow';
 import { BarChart } from '../components/BarChart/BarChart';
 import { Icon } from '../components/Icon/Icon';
+import { AppMark, AppSwitcher, HelpButton, Person } from '../components/Ecosystem/Ecosystem';
+import { FAMILY } from '../components/Ecosystem/family';
 import '../components/Canvas/canvas.css';
 
 const nf = new Intl.NumberFormat('da-DK');
@@ -28,7 +30,7 @@ function Shell({ children, current, crumb }: { children: ReactNode; current: str
   return (
     <div className="hub-shell hub-shell--framed">
       <aside className="hub-shell__nav">
-        <div className="hub-shell__brand">hub</div>
+        <div className="hub-shell__brand"><AppMark glyph="git-branch" name="Graphs" />Graphs</div>
         <nav className="hub-shell__menu" aria-label="Sections">
           {MENU.map(([group, items]) => (
             <div key={group} style={{ display: 'contents' }}>
@@ -41,10 +43,7 @@ function Shell({ children, current, crumb }: { children: ReactNode; current: str
             </div>
           ))}
         </nav>
-        <div className="hub-shell__me">
-          <span className="hub-avatar">UK</span>
-          <span><b style={{ display: 'block', fontWeight: 600 }}>Ulrich K.</b><span className="hub-caption">Owner</span></span>
-        </div>
+        <Person name="Ulrich K." role="Owner" />
       </aside>
 
       <div className="hub-shell__bar">
@@ -52,12 +51,13 @@ function Shell({ children, current, crumb }: { children: ReactNode; current: str
         <div className="hub-shell__tools">
           <span className="hub-search"><Icon name="search" />Search</span>
           <Button variant="round" aria-label="Notifications"><Icon name="bell" /></Button>
-          <Button variant="round" aria-label="Messages"><Icon name="message-rounded" /></Button>
-          <span className="hub-avatar" style={{ width: 38, height: 38 }}>UK</span>
+          <AppSwitcher apps={FAMILY} current="graphs" />
+          <button type="button" className="hub-avatar" aria-label="Account menu">UK</button>
         </div>
       </div>
 
       <main className="hub-shell__main" id="main">{children}</main>
+      <HelpButton />
     </div>
   );
 }

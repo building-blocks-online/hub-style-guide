@@ -23,6 +23,20 @@
   transition: border-color var(--hub-duration-fast) var(--hub-ease);
 }
 .hub-input::placeholder { color: var(--hub-input-ink-placeholder); }
+
+/* A leading icon comes from a wrapper, never from a padding utility fighting
+   .hub-input — in a Tailwind build the unlayered rule wins and the icon lands
+   on the text. */
+.hub-input-wrap { position: relative; display: flex; align-items: center; }
+.hub-input-wrap > .bx {
+  position: absolute; left: var(--hub-space-3);
+  font-size: 1.1rem; color: var(--hub-color-ink-subtle);
+  pointer-events: none;
+}
+.hub-input-wrap > .hub-input {
+  width: 100%;
+  padding-left: calc(var(--hub-space-3) + 1.1rem + var(--hub-space-2));
+}
 .hub-input:focus-visible { border-color: var(--hub-input-border-focus); }
 .hub-input:disabled { opacity: .45; cursor: not-allowed; }
 

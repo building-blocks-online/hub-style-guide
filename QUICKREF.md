@@ -59,10 +59,36 @@ panel becomes an overlay).
 1. **Colour only where it means something.**
 2. **Lines, not gaps, and never shadows.**
 3. **Lines mean connection.** Nothing is drawn to fill space.
-4. **One family, weight does the work — quietly.** 500–600, never 800.
+4. **One family, weight does the work — quietly.** 500–600, never 700 or
+   heavier; `strong` is 600. Nothing under 12px.
 5. **Radius is a role, not a habit.** 0 cell, 8px control, 14px sheet, pill
    buttons and status, circle icon buttons.
 6. **Semantic colour is separate.** Status never borrows the accent.
+
+## Across the hub apps
+
+Every app in the hub ecosystem uses Kridt wholesale — the owner's decision, so
+the apps read as one product. Its own older system does not win here. These
+pieces live in `layout.css` and are used as drawn, never re-made locally:
+
+| Piece | Rule |
+|---|---|
+| App mark | An ink tile with the app's Boxicon glyph; 32px in the sidebar, switcher and catalog, 56px on sign-in |
+| Brand | Mark and name on one line, 600; no tagline, no version |
+| App switcher | Round `bx-grid-alt` in the bar, last before the avatar; every app, same order, current one inked |
+| Person | Sidebar foot: neutral disc, name, role. The bar ends with the same disc for the account menu |
+| Help | One round ink button, 48px, bottom-right; in the bar on canvas pages |
+| Sign-in sheet | Mark, name at display-2, one line, one full-width ink action, "How it works", theme control |
+| How it works | Every app has one, by that name, in the last nav group |
+| Tab title | "Page — App" |
+
+Categories are **tags** (8px, lined, never filled); **chips** are status only.
+Notices are **banners** (paper, hairline, tone on a 3px edge), never a filled
+slab. A **segmented control** chooses a parameter; switching content is tabs.
+An empty chart keeps its frame.
+
+**Tailwind:** import the Kridt CSS with `layer(components)`, or unlayered
+`.hub-*` rules will silently beat your utilities.
 
 ## Icons
 
@@ -101,7 +127,10 @@ trailing arrows, no eyebrow labels in tracked capitals.
 - Colour only in status and the action colour; the primary button is ink.
 - Both themes checked: light, night, **and the un-stamped system default**.
 - Keyboard focus visible everywhere; every icon-only control has a name.
-- Running text at most 66ch; headings balance; figures at 500–600.
+- Running text at most 66ch; headings balance; figures at 500–600; nothing at
+  700 or under 12px; a single figure in proportional digits.
+- In a hub app: the shared mark, switcher, person, help button and sign-in
+  sheet, unchanged.
 - Chart labels are HTML, not SVG text.
 - Nothing depends on hover alone to be discoverable.
 - No tell from the skill's list: cream ground, serif display, tracked-caps

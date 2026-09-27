@@ -1,0 +1,37 @@
+/* A choice of parameter. The selected option is the ink block — the same
+   "here" as the current nav item — so a control that changes the view reads
+   in the same voice as the place you are. Tabs, which change the content,
+   stay underlined; the two must never look alike. */
+
+.hub-segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--hub-segmented-bg);
+  border: 1px solid var(--hub-segmented-border);
+  border-radius: var(--hub-radius-pill);
+}
+
+.hub-segmented__option {
+  font: var(--hub-text-label);
+  letter-spacing: var(--hub-tracking-label);
+  color: var(--hub-segmented-ink);
+  padding: 7px 14px;
+  border: 0;
+  border-radius: var(--hub-radius-pill);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--hub-duration-fast) var(--hub-ease),
+              color var(--hub-duration-fast) var(--hub-ease);
+}
+.hub-segmented__option .bx { font-size: 1.05em; }
+.hub-segmented__option:hover { color: var(--hub-color-ink); }
+
+.hub-segmented__option[aria-checked="true"] {
+  background: var(--hub-segmented-selected-bg);
+  color: var(--hub-segmented-selected-ink);
+}

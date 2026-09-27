@@ -22,12 +22,5 @@
 
 .hub-scroll-x { overflow-x: auto; }
 
-/* An initials disc: the sidebar footer, a table's "who" column. */
-.hub-avatar {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: var(--hub-color-surface-sunken);
-  display: grid; place-content: center;
-  font: var(--hub-text-caption); font-weight: 600;
-  color: var(--hub-color-ink-muted);
-  flex: none;
-}
+/* .hub-avatar lives in layout.css with the rest of the shell furniture,
+   so apps that import layout.css get it too. */

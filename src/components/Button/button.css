@@ -44,7 +44,11 @@
 
 .hub-btn .bx { font-size: 1.1em; }
 
-.hub-btn:disabled { opacity: .45; cursor: not-allowed; }
+/* Disabled keeps its variant, faded — never a grey fill that reads as a
+   different kind of button. Say why next to it. aria-disabled keeps it
+   focusable, so the reason can be reached. */
+.hub-btn:disabled,
+.hub-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
 
 /* A round icon button: the bar's bell, the region's "more". Always give it
    an aria-label; the icon is not the name. */

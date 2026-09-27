@@ -41,7 +41,7 @@ Requires Node 22.12+ (Storybook 10 is ESM-only).
 |---|---|
 | [`skills/hub-design-system/`](skills/hub-design-system/) | The design system as a Claude Code skill. Linked into `~/.claude/skills/`, so every project builds on-identity. |
 | [`skills/hub-design-system/references/tokens.css`](skills/hub-design-system/references/tokens.css) | **Source of truth.** Every colour, size and shape in the system. |
-| [`src/components/`](src/components/) | Button, Icon, Field, Select, Checkbox, Tabs, Plate, Dialog, Toast, Chip, DataTable, StatRow, BarChart, EmptyState, and the React Flow canvas node. |
+| [`src/components/`](src/components/) | Button, Icon, Field, Select, Checkbox, Segmented, Tabs, Plate, Dialog, Toast, Banner, Chip, Tag, DataTable, StatRow, BarChart, EmptyState, EmptyChart, FlowDiagram, the React Flow canvas node, and `Ecosystem/` — the app mark, app switcher, person, help button and sign-in sheet every hub app shares. |
 | [`src/docs/`](src/docs/) | Storybook docs pages — colour, typography, space and shape, writing. Layout archetypes live under `src/layouts/`. |
 | [`docs/kridt.html`](docs/kridt.html) | The identity as a standalone page — the dashboard archetype in Kridt, day and night. |
 
@@ -63,7 +63,7 @@ The short version follows.
 ## Using the tokens in another app
 
 ```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="tokens.css">
 ```
 

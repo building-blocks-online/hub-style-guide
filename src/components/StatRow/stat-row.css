@@ -55,10 +55,12 @@
 .hub-stat__cap    { fill: var(--hub-gauge-arc); }
 .hub-stat__needle { fill: var(--hub-color-surface); stroke: var(--hub-gauge-arc); stroke-width: 2.5; }
 
+/* A lone figure keeps proportional digits: tabular ones give "." and "/"
+   a full digit's width, so "0.0/10" would read "0 . 0/10". Tabular is for
+   digits that stack in a column. */
 .hub-stat__value {
   font: var(--hub-text-figure);
   letter-spacing: var(--hub-tracking-figure);
-  font-variant-numeric: tabular-nums;
   color: var(--hub-color-ink);
 }
 .hub-stat__gauge .hub-stat__value {

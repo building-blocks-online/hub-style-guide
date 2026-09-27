@@ -1,0 +1,37 @@
+/* A notice about the page, not a message about an action (that is a toast).
+   The tone rides on the same 3px left edge as a toast and an error plate, so
+   state looks the same wherever it appears. The body stays paper: a filled
+   slab of warning colour is the loudest thing on a page and says the least. */
+
+.hub-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--hub-space-3);
+  padding: var(--hub-space-3) var(--hub-space-4);
+  background: var(--hub-banner-bg);
+  border: 1px solid var(--hub-banner-border);
+  border-left: var(--hub-tone-edge) solid var(--hub-color-info);
+  border-radius: var(--hub-radius-control);
+  font: var(--hub-text-body-sm);
+  color: var(--hub-color-ink);
+}
+
+.hub-banner__icon {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--hub-color-info);
+  flex: none;
+}
+
+.hub-banner__body { flex: 1 1 auto; min-width: 0; }
+.hub-banner__title { font-weight: 600; margin: 0; }
+.hub-banner__text { margin: 2px 0 0; color: var(--hub-color-ink-muted); max-width: var(--hub-width-prose); }
+
+.hub-banner__dismiss { flex: none; margin: -4px -6px -4px 0; }
+
+.hub-banner[data-tone="success"] { border-left-color: var(--hub-color-success); }
+.hub-banner[data-tone="warning"] { border-left-color: var(--hub-color-warning); }
+.hub-banner[data-tone="danger"]  { border-left-color: var(--hub-color-danger); }
+.hub-banner[data-tone="success"] .hub-banner__icon { color: var(--hub-color-success); }
+.hub-banner[data-tone="warning"] .hub-banner__icon { color: var(--hub-color-warning); }
+.hub-banner[data-tone="danger"]  .hub-banner__icon { color: var(--hub-color-danger); }

@@ -45,8 +45,15 @@ that travel — layout archetypes, writing rules, the accessibility floor, the
 behavioural rules and the tells to avoid — expressed through *that project's*
 tokens. Do not introduce `--hub-*` tokens into a project that has its own.
 
-Everything below is for a project that has **no** design system, or one that
-has decided to adopt this one wholesale.
+**The exception is a hub app.** An app in the hub ecosystem — the family that
+shares one sign-in and the app switcher — adopts this system wholesale, even
+if it grew its own. Replace its tokens with ours rather than mapping between
+them, and use the shared pieces in `layout.md`, *Across the ecosystem*: the app
+mark, the app switcher, the person block, the help button and the sign-in
+sheet, exactly as drawn.
+
+Everything below is for a project that has **no** design system, a hub app, or
+a project that has decided to adopt this one wholesale.
 
 ---
 
@@ -136,6 +143,19 @@ npm install github:UlrichKronvoldPrivate/hub-style-guide#<commit-or-tag>
 @import "hub-style-guide/layout.css";
 ```
 
+**With Tailwind, put the Kridt CSS in a layer.** Tailwind v4 keeps its
+utilities in `@layer utilities`, and unlayered CSS beats every layer — so an
+unlayered `.hub-input { padding }` silently wins over `pl-9`, and the search
+icon lands on top of the placeholder. Import the tokens as they are (custom
+properties do not conflict) and everything else into the components layer:
+
+```css
+@import "tailwindcss";
+@import "hub-style-guide/tokens.css";
+@import "hub-style-guide/layout.css" layer(components);
+@import "./components/hub.css" layer(components);   /* recipes or copied component CSS */
+```
+
 The components are not exported by the package — copy their folders as above.
 
 Either way, **pin a commit.** There is no semantic versioning yet; the token
@@ -147,11 +167,14 @@ Both faces come from Google Fonts. Declare them before the tokens.
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 ```
 
 If the font host is blocked, the stacks fall back to Helvetica Neue and the
 system monospace. Nothing breaks; it just looks less like itself.
+
+Weights stop at 600, so 700 is not loaded. `tokens.css` sets `strong` and `b`
+to 600; remove `font-bold` and any other 700 you find.
 
 ### 3. Icons
 
@@ -233,6 +256,10 @@ has no dependencies except:
 - `Canvas/` needs `@xyflow/react`
 - everything else needs only React
 
+A hub app also copies `Ecosystem/` — the app mark, app switcher, person, help
+button and sign-in sheet — whose CSS is already in `layout.css`, and uses it
+unchanged.
+
 Copy the folder, keep the file names, and diff against this repo when you
 pull updates. If you are not using React, the same components are written as
 plain CSS recipes in `skills/hub-design-system/references/components.md`.
@@ -256,7 +283,10 @@ This is the checklist the skill applies to its own work. Apply it to yours.
 - Regions touch and share hairlines; nothing casts a shadow; nothing is a
   gradient or glass.
 - Keyboard focus is visible on every interactive element.
-- Running text is at most 66ch; headings balance.
+- Running text is at most 66ch; headings balance; nothing is 700 or heavier,
+  and nothing is under 12px.
+- In a Tailwind build, the Kridt CSS sits in `@layer components`.
+- In a hub app, the shared pieces are the ones from `Ecosystem/`, unchanged.
 - Any chart's labels are HTML, not SVG text.
 - Nothing depends on hover alone to be discoverable.
 - No item from the tells table in `SKILL.md` is present.

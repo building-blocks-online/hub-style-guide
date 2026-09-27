@@ -27,7 +27,7 @@
   /* ink — spruce is the black. green-black, not a tinted grey */
   --hub-spruce:      #132420;
   --hub-spruce-60:   #5B675F;
-  --hub-spruce-45:   #8A948C;
+  --hub-spruce-45:   #636F68;   /* subtle ink: 4.5:1 or better on paper, sunken, ground and band */
 
   /* winter night */
   --hub-night:         #0E1B18;
@@ -38,7 +38,7 @@
   --hub-night-line-2:  #3A4842;
   --hub-frost:     #EAF0EA;
   --hub-frost-70:  #A9B6AE;
-  --hub-frost-50:  #778780;
+  --hub-frost-50:  #869690;   /* subtle ink at night: 4.5:1 or better on every night surface */
 
   /* the action colour — Skagen, sea petrol. fills and text steps. */
   --hub-skagen-40: #0F6C86;  --hub-skagen-70: #5FD0DC;
@@ -211,6 +211,33 @@
   --hub-gauge-track:          var(--hub-color-band);
   --hub-gauge-arc:            var(--hub-color-ink);
 
+  /* the edge that carries state: toast, error plate, banner, decision */
+  --hub-tone-edge:            3px;
+
+  /* a category, not a status: square-ish, lined, never filled */
+  --hub-tag-radius:           var(--hub-radius-control);
+  --hub-tag-border:           var(--hub-color-line-strong);
+  --hub-tag-ink:              var(--hub-color-ink-muted);
+
+  --hub-banner-bg:            var(--hub-color-surface);
+  --hub-banner-border:        var(--hub-color-line);
+
+  /* a choice of parameter (7/30/90 days, System/Light/Dark). tabs stay underlined. */
+  --hub-segmented-bg:         var(--hub-color-surface-sunken);
+  --hub-segmented-border:     var(--hub-color-line);
+  --hub-segmented-ink:        var(--hub-color-ink-muted);
+  --hub-segmented-selected-bg:  var(--hub-color-ink);
+  --hub-segmented-selected-ink: var(--hub-color-ink-on-ink);
+
+  /* ecosystem furniture — the same in all seven apps */
+  --hub-mark-bg:              var(--hub-color-ink);
+  --hub-mark-ink:             var(--hub-color-ink-on-ink);
+  --hub-mark-size:            32px;    /* sidebar brand, switcher, catalog cell */
+  --hub-mark-size-lg:         56px;    /* the sign-in sheet */
+  --hub-help-size:            48px;
+  --hub-signin-width:         min(440px, calc(100vw - var(--hub-space-6)));
+  --hub-switcher-width:       min(384px, calc(100vw - var(--hub-space-6)));
+
   color-scheme: light dark;
 }
 
@@ -293,6 +320,10 @@ body {
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Weights stop at 600. Emphasis in running text is the top of the scale,
+   not a heavier face — the browser default for <strong> is 700. */
+strong, b { font-weight: 600; }
 
 /* Links are small type, so they take the text step and keep an underline —
    colour alone is not an affordance. */

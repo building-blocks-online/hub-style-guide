@@ -169,6 +169,26 @@ a bug. Sticky is spent on exactly two things: the bar, and a table's `thead`.
 | Canvas controls / minimap | Bottom-left / bottom-right | React Flow's defaults, kept |
 | Toasts | Bottom-centre | Both bottom corners are taken |
 | Destructive actions | Last, never adjacent to a primary | Distance is the cheapest safeguard |
+| App switcher | Right of the bar, the last tool before the avatar | The way to the other apps sits beside who you are |
+| Help and feedback | Bottom-right, fixed; a round tool in the bar on canvas pages | One place to ask, the same in every app |
+
+## Across the ecosystem
+
+The hub apps are one family: each has its own job and the same frame. These
+pieces are drawn once, in `layout.css`, and every app uses them as they are —
+a local variant is a fork, and forks are what make a family look unrelated.
+
+| Piece | Class | Rule |
+|---|---|---|
+| App mark | `.hub-mark`, `.hub-mark--lg` | An ink tile with the app's Boxicon glyph: 32px with 8px corners in the sidebar, the switcher and the home app's catalog; 56px with 14px corners on the sign-in sheet. One glyph per app, everywhere. An app without one gets its initial. |
+| Brand | `.hub-shell__brand` | The mark and the name on one line, at 600. No tagline, no version. |
+| App switcher | `.hub-switcher` | A round `bx-grid-alt` button (`aria-label="Apps"`) opens a sheet listing every app, in the same order in every app. Each row: mark, name, one line on what it is for, and a status marker when the app knows it. The current app is the ink block. |
+| Person | `.hub-person` inside `.hub-shell__me` | At the sidebar foot: a neutral disc, the display name, the role. The email only stands in for a missing name, and never appears twice. The bar ends with the same disc, which opens the account menu: profile, theme, sign out. |
+| Help | `.hub-help` | One round ink button, 48px, `bx-message-rounded-dots`, `aria-label="Feedback"`. The nav may list Feedback too; the bar does not. |
+| Sign-in sheet | `.hub-signin` | The first screen when signed out, identical in every app: the large mark, the name at display-2, one line, the one action at full width, a quiet "How it works", the theme control. The identity provider's own page is branded to match. |
+| Theme | round button; segmented control | In the bar, one round button showing the current mode (`bx-desktop`, `bx-sun`, `bx-moon`) with an `aria-label` that names it. On the sign-in sheet and in the account menu, the three-way segmented control: System, Light, Dark. |
+| How it works | a reading page | Every app has one, named "How it works", in the last nav group and linked from the sign-in sheet. The problem, how it works as a flow diagram, what is in it, what it will not do. |
+| Tab title | `<title>` | "Page — App", such as "Runs — Pipelines" or "Sign in — Pipelines". The page comes first, because tabs truncate from the end. |
 
 ## Layout tells to avoid
 
