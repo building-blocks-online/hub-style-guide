@@ -1,0 +1,650 @@
+{
+  "app": "client-hub",
+  "start": "https://client-hub.building-bricks.online/",
+  "landed": "https://client-hub.building-bricks.online/clients",
+  "signedIn": true,
+  "screens": [
+    {
+      "slug": "01-landing",
+      "nav": "landing",
+      "url": "https://client-hub.building-bricks.online/clients",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://client-hub.building-bricks.online/clients",
+        "title": "Client Hub — Client Registry",
+        "themeAttr": "light",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            29
+          ],
+          [
+            "JetBrains Mono",
+            2
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            19
+          ],
+          [
+            "400",
+            9
+          ],
+          [
+            "600",
+            2
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "12px",
+            8
+          ],
+          [
+            "14px",
+            7
+          ],
+          [
+            "12.48px",
+            7
+          ],
+          [
+            "14.4px",
+            5
+          ],
+          [
+            "13.6px",
+            2
+          ],
+          [
+            "39px",
+            1
+          ],
+          [
+            "13.12px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "999px",
+            7
+          ],
+          [
+            "8px",
+            5
+          ],
+          [
+            "50%",
+            3
+          ],
+          [
+            "6px",
+            2
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            11
+          ],
+          [
+            "rgb(19, 36, 32)",
+            8
+          ],
+          [
+            "rgb(138, 148, 140)",
+            5
+          ],
+          [
+            "rgb(10, 80, 98)",
+            4
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            10
+          ],
+          [
+            "rgb(245, 247, 244)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"Client Hub\""
+          ]
+        },
+        "lowContrast": {
+          "n": 5,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "Client",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "Websites",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "Enrichment",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "ClientID",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 5,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 3
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#F2F4F1",
+          "action": "#0F6C86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Clients",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "02-api-access",
+      "nav": "API access",
+      "url": "https://client-hub.building-bricks.online/api-access",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://client-hub.building-bricks.online/api-access",
+        "title": "Client Hub — Client Registry",
+        "themeAttr": "light",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            85
+          ],
+          [
+            "JetBrains Mono",
+            77
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "JetBrains Mono 500",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            97
+          ],
+          [
+            "600",
+            31
+          ],
+          [
+            "500",
+            27
+          ],
+          [
+            "700",
+            7
+          ]
+        ],
+        "sizes": [
+          [
+            "13.12px",
+            43
+          ],
+          [
+            "12px",
+            37
+          ],
+          [
+            "14.4px",
+            32
+          ],
+          [
+            "14px",
+            31
+          ],
+          [
+            "12.48px",
+            6
+          ],
+          [
+            "20px",
+            6
+          ],
+          [
+            "12.8px",
+            4
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "999px",
+            41
+          ],
+          [
+            "8px",
+            20
+          ],
+          [
+            "50%",
+            3
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            86
+          ],
+          [
+            "rgb(91, 103, 95)",
+            65
+          ],
+          [
+            "rgb(179, 58, 43)",
+            4
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(10, 80, 98)",
+            3
+          ],
+          [
+            "rgb(138, 148, 140)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            32
+          ],
+          [
+            "rgb(242, 244, 241)",
+            13
+          ],
+          [
+            "rgb(255, 255, 255)",
+            9
+          ],
+          [
+            "rgb(248, 227, 223)",
+            4
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 7,
+          "ex": [
+            "div.hub-shell__brand \"Client Hub\"",
+            "strong \"ClientID\"",
+            "strong \"Orbit Auth0 token\"",
+            "strong \"Client Hub API key\"",
+            "strong \"narrow\"",
+            "strong \"tombstone\""
+          ]
+        },
+        "lowContrast": {
+          "n": 1,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 5,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 3
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#F2F4F1",
+          "action": "#0F6C86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "API",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 3292
+      }
+    },
+    {
+      "slug": "03-how-it-works",
+      "nav": "How it works",
+      "url": "https://client-hub.building-bricks.online/how-it-works",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://client-hub.building-bricks.online/how-it-works",
+        "title": "Client Hub — Client Registry",
+        "themeAttr": "light",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            75
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            38
+          ],
+          [
+            "500",
+            33
+          ],
+          [
+            "700",
+            3
+          ],
+          [
+            "600",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            42
+          ],
+          [
+            "12px",
+            12
+          ],
+          [
+            "14.4px",
+            8
+          ],
+          [
+            "12.48px",
+            6
+          ],
+          [
+            "20px",
+            5
+          ],
+          [
+            "39px",
+            1
+          ],
+          [
+            "12.8px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            11
+          ],
+          [
+            "50%",
+            9
+          ],
+          [
+            "999px",
+            6
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            37
+          ],
+          [
+            "rgb(91, 103, 95)",
+            24
+          ],
+          [
+            "rgb(255, 255, 255)",
+            6
+          ],
+          [
+            "rgb(138, 148, 140)",
+            5
+          ],
+          [
+            "rgb(10, 80, 98)",
+            3
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            15
+          ],
+          [
+            "rgb(255, 255, 255)",
+            6
+          ],
+          [
+            "rgb(19, 36, 32)",
+            3
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 3,
+          "ex": [
+            "div.hub-shell__brand \"Client Hub\"",
+            "strong \"ClientID\"",
+            "strong \"see\""
+          ]
+        },
+        "lowContrast": {
+          "n": 5,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.diagram-label",
+              "text": "Filled in from what is already",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.diagram-label",
+              "text": "Each stores only the ClientID,",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "Role",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "th",
+              "text": "Can",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 5,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 3
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#F2F4F1",
+          "action": "#0F6C86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "How Client Hub works",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 2528
+      }
+    }
+  ],
+  "narrow": {
+    "hOverflow": false,
+    "scrollWidth": 390
+  },
+  "logs": []
+}

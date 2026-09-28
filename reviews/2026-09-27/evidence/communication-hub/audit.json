@@ -1,0 +1,179 @@
+{
+  "app": "communication-hub",
+  "start": "https://communication-hub.building-bricks.online/",
+  "landed": "https://communication-hub.building-bricks.online/",
+  "signedIn": true,
+  "screens": [
+    {
+      "slug": "01-landing",
+      "nav": "landing",
+      "url": "https://communication-hub.building-bricks.online/",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://communication-hub.building-bricks.online/",
+        "title": "Communication Hub — Task Execution & Decision Log",
+        "themeAttr": "light",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            21
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            12
+          ],
+          [
+            "500",
+            9
+          ]
+        ],
+        "sizes": [
+          [
+            "12px",
+            10
+          ],
+          [
+            "14px",
+            8
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "25px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "999px",
+            10
+          ],
+          [
+            "50%",
+            5
+          ],
+          [
+            "8px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            10
+          ],
+          [
+            "rgb(19, 36, 32)",
+            5
+          ],
+          [
+            "rgb(255, 255, 255)",
+            4
+          ],
+          [
+            "rgb(138, 93, 7)",
+            1
+          ],
+          [
+            "rgb(138, 148, 140)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(35, 104, 74)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            4
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(247, 236, 211)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 1,
+          "ex": [
+            {
+              "el": "li.empty",
+              "text": "No runs yet. Start one from an",
+              "ratio": 3.14,
+              "size": "14px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 1,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 3
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#F2F4F1",
+          "action": "#0F6C86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "The log is the point.",
+          "size": "25px",
+          "weight": "500"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    }
+  ],
+  "narrow": {
+    "hOverflow": true,
+    "scrollWidth": 538
+  },
+  "logs": []
+}

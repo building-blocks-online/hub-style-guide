@@ -1,0 +1,1727 @@
+{
+  "app": "geo-observatory",
+  "start": "https://geo-observatory.building-bricks.online/overview",
+  "landed": "https://geo-observatory.building-bricks.online/overview",
+  "signedIn": true,
+  "screens": [
+    {
+      "slug": "01-landing",
+      "nav": "landing",
+      "url": "https://geo-observatory.building-bricks.online/overview",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/overview",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            99
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            61
+          ],
+          [
+            "400",
+            26
+          ],
+          [
+            "600",
+            11
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            49
+          ],
+          [
+            "12px",
+            34
+          ],
+          [
+            "16px",
+            5
+          ],
+          [
+            "28px",
+            4
+          ],
+          [
+            "20px",
+            4
+          ],
+          [
+            "39px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "18px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            38
+          ],
+          [
+            "999px",
+            7
+          ],
+          [
+            "50%",
+            1
+          ],
+          [
+            "4px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            39
+          ],
+          [
+            "rgb(19, 36, 32)",
+            21
+          ],
+          [
+            "rgb(138, 148, 140)",
+            21
+          ],
+          [
+            "rgb(138, 93, 7)",
+            9
+          ],
+          [
+            "rgb(10, 80, 98)",
+            3
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(35, 104, 74)",
+            2
+          ],
+          [
+            "oklab(0.514133 0.0269412 0.102453 / 0.9)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            6
+          ],
+          [
+            "rgb(247, 236, 211)",
+            6
+          ],
+          [
+            "rgb(245, 247, 244)",
+            4
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(227, 241, 233)",
+            1
+          ],
+          [
+            "rgb(225, 238, 242)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\""
+          ]
+        },
+        "lowContrast": {
+          "n": 22,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 48,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 2
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Persona Seed Brand (spec 105)",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "02-how-geo-observatory-works",
+      "nav": "How GEO Observatory works",
+      "url": "https://geo-observatory.building-bricks.online/how-it-works",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/how-it-works",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            201
+          ],
+          [
+            "JetBrains Mono",
+            23
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "JetBrains Mono 500",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            103
+          ],
+          [
+            "500",
+            53
+          ],
+          [
+            "600",
+            48
+          ],
+          [
+            "700",
+            20
+          ]
+        ],
+        "sizes": [
+          [
+            "12px",
+            77
+          ],
+          [
+            "14px",
+            60
+          ],
+          [
+            "15px",
+            33
+          ],
+          [
+            "13px",
+            19
+          ],
+          [
+            "11px",
+            13
+          ],
+          [
+            "24px",
+            6
+          ],
+          [
+            "16px",
+            4
+          ],
+          [
+            "9px",
+            4
+          ],
+          [
+            "9.5px",
+            4
+          ],
+          [
+            "10px",
+            2
+          ]
+        ],
+        "radii": [
+          [
+            "14px",
+            42
+          ],
+          [
+            "8px",
+            33
+          ],
+          [
+            "999px",
+            31
+          ],
+          [
+            "4px",
+            12
+          ],
+          [
+            "50%",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            84
+          ],
+          [
+            "rgb(19, 36, 32)",
+            66
+          ],
+          [
+            "rgb(138, 148, 140)",
+            48
+          ],
+          [
+            "rgb(15, 108, 134)",
+            9
+          ],
+          [
+            "rgb(10, 80, 98)",
+            7
+          ],
+          [
+            "rgb(35, 104, 74)",
+            5
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(138, 93, 7)",
+            2
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            28
+          ],
+          [
+            "rgb(225, 238, 242)",
+            19
+          ],
+          [
+            "rgb(15, 108, 134)",
+            11
+          ],
+          [
+            "rgb(227, 231, 225)",
+            8
+          ],
+          [
+            "rgb(245, 247, 244)",
+            6
+          ],
+          [
+            "rgb(138, 148, 140)",
+            5
+          ],
+          [
+            "rgb(227, 241, 233)",
+            3
+          ],
+          [
+            "rgb(237, 240, 236)",
+            3
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(247, 236, 211)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 2,
+          "ex": [
+            "span.inline-flex.items-center"
+          ]
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 20,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\"",
+            "h1.text-3xl.font-bold \"The quick tour\"",
+            "strong \"monitor\"",
+            "strong \"analyze\"",
+            "strong \"playbooks\"",
+            "strong \"track\""
+          ]
+        },
+        "lowContrast": {
+          "n": 48,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 55,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 1
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "The quick tour",
+          "size": "36px",
+          "weight": "700"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "03-collection",
+      "nav": "Collection",
+      "url": "https://geo-observatory.building-bricks.online/collection",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/collection",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            69
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            44
+          ],
+          [
+            "400",
+            19
+          ],
+          [
+            "600",
+            4
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            44
+          ],
+          [
+            "12px",
+            19
+          ],
+          [
+            "16px",
+            4
+          ],
+          [
+            "39px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            33
+          ],
+          [
+            "999px",
+            8
+          ],
+          [
+            "50%",
+            1
+          ],
+          [
+            "4px",
+            1
+          ],
+          [
+            "14px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            36
+          ],
+          [
+            "rgb(19, 36, 32)",
+            18
+          ],
+          [
+            "rgb(138, 148, 140)",
+            10
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(138, 93, 7)",
+            1
+          ],
+          [
+            "oklab(0.514133 0.0269412 0.102453 / 0.9)",
+            1
+          ],
+          [
+            "rgb(10, 80, 98)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            7
+          ],
+          [
+            "rgb(255, 255, 255)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(247, 236, 211)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\"",
+            "p.text-2xl.font-bold \"$0.00\""
+          ]
+        },
+        "lowContrast": {
+          "n": 10,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 40,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Collection",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "04-prompts",
+      "nav": "Prompts",
+      "url": "https://geo-observatory.building-bricks.online/prompts",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/prompts",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            49
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            35
+          ],
+          [
+            "400",
+            11
+          ],
+          [
+            "600",
+            2
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            37
+          ],
+          [
+            "12px",
+            9
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            32
+          ],
+          [
+            "999px",
+            2
+          ],
+          [
+            "50%",
+            1
+          ],
+          [
+            "14px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            31
+          ],
+          [
+            "rgb(138, 148, 140)",
+            9
+          ],
+          [
+            "rgb(19, 36, 32)",
+            7
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            4
+          ],
+          [
+            "rgb(15, 108, 134)",
+            2
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(245, 247, 244)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\""
+          ]
+        },
+        "lowContrast": {
+          "n": 9,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Add Prompt",
+            "bg": "rgb(15, 108, 134)"
+          },
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 38,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Prompts",
+          "size": "24px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "05-responses",
+      "nav": "Responses",
+      "url": "https://geo-observatory.building-bricks.online/responses",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/responses",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            65
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            47
+          ],
+          [
+            "400",
+            16
+          ],
+          [
+            "600",
+            1
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            41
+          ],
+          [
+            "12px",
+            21
+          ],
+          [
+            "16px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ],
+          [
+            "18px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            39
+          ],
+          [
+            "999px",
+            8
+          ],
+          [
+            "14px",
+            2
+          ],
+          [
+            "50%",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            42
+          ],
+          [
+            "rgb(19, 36, 32)",
+            11
+          ],
+          [
+            "rgb(138, 148, 140)",
+            11
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            6
+          ],
+          [
+            "rgb(245, 247, 244)",
+            6
+          ],
+          [
+            "rgb(237, 240, 236)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\""
+          ]
+        },
+        "lowContrast": {
+          "n": 11,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.w-full.rounded-md",
+          "input.hub-input.w-full",
+          "input.hub-input.w-full",
+          "input.w-full.rounded-md"
+        ],
+        "iconSets": {
+          "boxicons": 44,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Responses",
+          "size": "24px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "06-domains",
+      "nav": "Domains",
+      "url": "https://geo-observatory.building-bricks.online/sources",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/sources",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            65
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            45
+          ],
+          [
+            "400",
+            17
+          ],
+          [
+            "600",
+            2
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            48
+          ],
+          [
+            "12px",
+            13
+          ],
+          [
+            "16px",
+            3
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            34
+          ],
+          [
+            "999px",
+            13
+          ],
+          [
+            "50%",
+            1
+          ],
+          [
+            "14px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            32
+          ],
+          [
+            "rgb(19, 36, 32)",
+            15
+          ],
+          [
+            "rgb(138, 148, 140)",
+            12
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(10, 80, 98)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ],
+          [
+            "oklab(0.494232 -0.0643153 -0.0601969 / 0.8)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            13
+          ],
+          [
+            "rgb(19, 36, 32)",
+            3
+          ],
+          [
+            "rgb(245, 247, 244)",
+            3
+          ],
+          [
+            "rgb(225, 238, 242)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\""
+          ]
+        },
+        "lowContrast": {
+          "n": 12,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 38,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Sources",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "07-keywords",
+      "nav": "Keywords",
+      "url": "https://geo-observatory.building-bricks.online/keywords",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://geo-observatory.building-bricks.online/keywords",
+        "title": "GEO Observatory",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            54
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            37
+          ],
+          [
+            "400",
+            14
+          ],
+          [
+            "600",
+            2
+          ],
+          [
+            "700",
+            1
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            39
+          ],
+          [
+            "12px",
+            12
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            34
+          ],
+          [
+            "999px",
+            6
+          ],
+          [
+            "50%",
+            1
+          ],
+          [
+            "14px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            31
+          ],
+          [
+            "rgb(19, 36, 32)",
+            11
+          ],
+          [
+            "rgb(138, 148, 140)",
+            9
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(138, 93, 7)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            7
+          ],
+          [
+            "rgb(245, 247, 244)",
+            3
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(247, 236, 211)",
+            1
+          ],
+          [
+            "rgb(15, 108, 134)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 1,
+          "ex": [
+            "div.hub-shell__brand \"GEO Observatory\""
+          ]
+        },
+        "lowContrast": {
+          "n": 9,
+          "ex": [
+            {
+              "el": "div.hub-nav-group",
+              "text": "General",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Sources",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Optimize",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Actions",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Measure",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "div.hub-nav-group",
+              "text": "Project",
+              "ratio": 3.14,
+              "size": "12px"
+            }
+          ]
+        },
+        "chromaticButtons": [
+          {
+            "text": "Open feedback",
+            "bg": "rgb(15, 108, 134)"
+          }
+        ],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.hub-input.pl-9"
+        ],
+        "iconSets": {
+          "boxicons": 41,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Keywords",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    }
+  ],
+  "narrow": {
+    "hOverflow": false,
+    "scrollWidth": 390
+  },
+  "logs": [
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/tenants/05105105-0000-4000-8000-000000000001/brands/05105105-0000-4000-8000-000000000002/search-console/backfill/status"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/brands/05105105-0000-4000-8000-000000000002/search-console/connection"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/tenants/05105105-0000-4000-8000-000000000001/brands/05105105-0000-4000-8000-000000000002/search-console/backfill/status"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/brands/05105105-0000-4000-8000-000000000002/search-console/connection"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/brands/05105105-0000-4000-8000-000000000002/search-console/connection"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/tenants/05105105-0000-4000-8000-000000000001/brands/05105105-0000-4000-8000-000000000002/search-console/backfill/status"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/brands/05105105-0000-4000-8000-000000000002/search-console/connection"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    },
+    {
+      "type": "http503",
+      "text": "https://geo-observatory.building-bricks.online/api/v1/tenants/05105105-0000-4000-8000-000000000001/brands/05105105-0000-4000-8000-000000000002/search-console/backfill/status"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 503 ()"
+    }
+  ]
+}

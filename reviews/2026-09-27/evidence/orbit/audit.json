@@ -1,0 +1,1092 @@
+{
+  "app": "orbit",
+  "start": "https://orbit.building-bricks.online/",
+  "landed": "https://orbit.building-bricks.online/",
+  "signedIn": true,
+  "screens": [
+    {
+      "slug": "01-landing",
+      "nav": "landing",
+      "url": "https://orbit.building-bricks.online/",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            50
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900"
+        ],
+        "weights": [
+          [
+            "500",
+            31
+          ],
+          [
+            "400",
+            13
+          ],
+          [
+            "600",
+            3
+          ],
+          [
+            "700",
+            3
+          ]
+        ],
+        "sizes": [
+          [
+            "12px",
+            20
+          ],
+          [
+            "14px",
+            18
+          ],
+          [
+            "16px",
+            6
+          ],
+          [
+            "24px",
+            3
+          ],
+          [
+            "18px",
+            2
+          ],
+          [
+            "10px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "9999px",
+            20
+          ],
+          [
+            "6px",
+            8
+          ],
+          [
+            "8px",
+            6
+          ],
+          [
+            "14px",
+            6
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            27
+          ],
+          [
+            "rgb(19, 36, 32)",
+            12
+          ],
+          [
+            "rgb(10, 80, 98)",
+            5
+          ],
+          [
+            "rgb(35, 104, 74)",
+            5
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            8
+          ],
+          [
+            "rgb(35, 104, 74)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(245, 247, 244)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 3,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h2.text-2xl.font-bold \"Dashboard\"",
+            "div.text-2xl.font-bold \"10\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 20,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 21
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Dashboard",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "02-app-catalog",
+      "nav": "App Catalog",
+      "url": "https://orbit.building-bricks.online/catalog",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/catalog",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            63
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900"
+        ],
+        "weights": [
+          [
+            "500",
+            39
+          ],
+          [
+            "600",
+            12
+          ],
+          [
+            "400",
+            10
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            28
+          ],
+          [
+            "12px",
+            21
+          ],
+          [
+            "16px",
+            10
+          ],
+          [
+            "18px",
+            2
+          ],
+          [
+            "10px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "9999px",
+            35
+          ],
+          [
+            "6px",
+            20
+          ],
+          [
+            "14px",
+            10
+          ],
+          [
+            "8px",
+            6
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            27
+          ],
+          [
+            "rgb(19, 36, 32)",
+            24
+          ],
+          [
+            "rgb(35, 104, 74)",
+            8
+          ],
+          [
+            "rgb(255, 255, 255)",
+            4
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            12
+          ],
+          [
+            "rgb(242, 244, 241)",
+            10
+          ],
+          [
+            "rgb(35, 104, 74)",
+            8
+          ],
+          [
+            "rgb(19, 36, 32)",
+            5
+          ],
+          [
+            "rgb(245, 247, 244)",
+            2
+          ],
+          [
+            "rgb(91, 103, 95)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h1.text-2xl.font-bold \"App Catalog\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 22,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 23
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "App Catalog",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "03-skills-agents",
+      "nav": "Skills & Agents",
+      "url": "https://orbit.building-bricks.online/skills",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/skills",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            22
+          ],
+          [
+            "JetBrains Mono",
+            6
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900",
+          "JetBrains Mono 100 800"
+        ],
+        "weights": [
+          [
+            "500",
+            12
+          ],
+          [
+            "400",
+            11
+          ],
+          [
+            "600",
+            3
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            12
+          ],
+          [
+            "12px",
+            10
+          ],
+          [
+            "18px",
+            3
+          ],
+          [
+            "10px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ],
+          [
+            "16px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            9
+          ],
+          [
+            "6px",
+            6
+          ],
+          [
+            "9999px",
+            6
+          ],
+          [
+            "4px",
+            2
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            19
+          ],
+          [
+            "rgb(19, 36, 32)",
+            7
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            6
+          ],
+          [
+            "rgb(19, 36, 32)",
+            3
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(242, 244, 241)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h2.text-2xl.font-bold \"Skills & Agents\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.flex.h-10"
+        ],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 15,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 16
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Dashboard",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "04-snippets",
+      "nav": "Snippets",
+      "url": "https://orbit.building-bricks.online/snippets",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/snippets",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            15
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900"
+        ],
+        "weights": [
+          [
+            "500",
+            7
+          ],
+          [
+            "400",
+            3
+          ],
+          [
+            "600",
+            3
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            9
+          ],
+          [
+            "18px",
+            3
+          ],
+          [
+            "12px",
+            1
+          ],
+          [
+            "10px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            6
+          ],
+          [
+            "9999px",
+            6
+          ],
+          [
+            "6px",
+            4
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            8
+          ],
+          [
+            "rgb(19, 36, 32)",
+            6
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            3
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h1.text-2xl.font-bold \"Snippets\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 12,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 13
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Snippets",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "05-feedback",
+      "nav": "Feedback",
+      "url": "https://orbit.building-bricks.online/feedback",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/feedback",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            18
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900"
+        ],
+        "weights": [
+          [
+            "500",
+            10
+          ],
+          [
+            "400",
+            3
+          ],
+          [
+            "600",
+            3
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            12
+          ],
+          [
+            "18px",
+            3
+          ],
+          [
+            "12px",
+            1
+          ],
+          [
+            "10px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "6px",
+            9
+          ],
+          [
+            "8px",
+            6
+          ],
+          [
+            "9999px",
+            6
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            9
+          ],
+          [
+            "rgb(91, 103, 95)",
+            8
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(242, 244, 241)",
+            5
+          ],
+          [
+            "rgb(245, 247, 244)",
+            3
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h1.text-2xl.font-bold \"Feedback Dashboard\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 15,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 16
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Feedback",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "06-admin",
+      "nav": "Admin",
+      "url": "https://orbit.building-bricks.online/admin",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://orbit.building-bricks.online/admin",
+        "title": "Orbit Dashboard",
+        "themeAttr": "",
+        "htmlClass": "light",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            108
+          ],
+          [
+            "JetBrains Mono",
+            17
+          ]
+        ],
+        "loadedFonts": [
+          "Schibsted Grotesk 400 900",
+          "JetBrains Mono 100 800"
+        ],
+        "weights": [
+          [
+            "500",
+            46
+          ],
+          [
+            "600",
+            39
+          ],
+          [
+            "400",
+            38
+          ],
+          [
+            "700",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            66
+          ],
+          [
+            "12px",
+            36
+          ],
+          [
+            "16px",
+            17
+          ],
+          [
+            "18px",
+            4
+          ],
+          [
+            "10px",
+            1
+          ],
+          [
+            "24px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "9999px",
+            40
+          ],
+          [
+            "8px",
+            23
+          ],
+          [
+            "14px",
+            17
+          ],
+          [
+            "4px",
+            7
+          ],
+          [
+            "6px",
+            4
+          ],
+          [
+            "50%",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            75
+          ],
+          [
+            "rgb(91, 103, 95)",
+            49
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            38
+          ],
+          [
+            "rgb(255, 255, 255)",
+            19
+          ],
+          [
+            "rgb(35, 104, 74)",
+            17
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(227, 231, 225)",
+            1
+          ],
+          [
+            "rgb(179, 59, 43)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 2,
+          "ex": [
+            "span.text-lg.font-bold \"Orbit\"",
+            "h1.text-2xl.font-bold \"Administration\""
+          ]
+        },
+        "lowContrast": {
+          "n": 0,
+          "ex": []
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 0,
+          "lucide": 35,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 36
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Admin",
+          "size": "18px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    }
+  ],
+  "narrow": {
+    "hOverflow": false,
+    "scrollWidth": 390
+  },
+  "logs": []
+}

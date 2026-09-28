@@ -1,0 +1,23 @@
+[
+  {
+    "app": "orbit",
+    "signedIn": true,
+    "landed": "https://orbit.building-bricks.online/",
+    "screens": [
+      "01-landing",
+      "02-app-catalog",
+      "03-skills-agents",
+      "04-snippets",
+      "05-feedback",
+      "06-admin"
+    ]
+  },
+  {
+    "app": "client-hub",
+    "signedIn": true,
+    "landed": "https://client-hub.building-bricks.online/",
+    "screens": [
+      "01-landing"
+    ]
+  }
+]

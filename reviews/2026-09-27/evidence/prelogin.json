@@ -1,0 +1,137 @@
+[
+  {
+    "app": "orbit",
+    "url": "https://building-blocks-dev.eu.auth0.com/u/login?state=hKFo2SA3NTVDX2Z5eWdBWVhkRERqQzRDbWZMVFRoeUY1OTdTcKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGFzUDMzS2ZCaGZVNU5HUUlqRENIWW42Y19WNWpPTFhno2NpZNkgOElEOXNPNHQ5WXRyTFdjaUlsZmdSbjZBeUpleHhOS1o",
+    "title": "Log in | Orbit Dashboard",
+    "hasPassword": true,
+    "buttons": [
+      "Learn More",
+      "Reset password",
+      "Continue",
+      "Sign up",
+      "Continue with Google"
+    ],
+    "fonts": [
+      "ulp-font",
+      "Arial"
+    ],
+    "bodyBg": "rgb(0, 0, 0)",
+    "bodyBgImage": "none",
+    "host": "building-blocks-dev.eu.auth0.com"
+  },
+  {
+    "app": "orchestration-hub",
+    "url": "https://orchestration-hub.building-bricks.online/",
+    "title": "Orchestration Hub — Workflow Designer",
+    "hasPassword": false,
+    "buttons": [
+      "Sign in with Orbit",
+      "System\nMatch my system setting (currently light)",
+      "Light\nLight theme",
+      "Dark\nDark theme"
+    ],
+    "fonts": [
+      "\"Schibsted Grotesk\""
+    ],
+    "bodyBg": "rgb(242, 244, 241)",
+    "bodyBgImage": "none",
+    "host": "orchestration-hub.building-bricks.online"
+  },
+  {
+    "app": "prototype-hub",
+    "url": "https://building-blocks-dev.eu.auth0.com/u/login?state=hKFo2SB2NEw0RG5pV0JVaVZjWVliZEhGT3ZXdXRROGQ1VU5idKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDY2b213N1lhWGFpb3VLVTBhNnJjWHBSNUd6b04xZDJGo2NpZNkgQ2s3S0RxdzVqRnViMU5ZaGNFTERZYVhmdzh4Y1pzMjQ",
+    "title": "Log in | orbit-prototype-hub",
+    "hasPassword": true,
+    "buttons": [
+      "Learn More",
+      "Reset password",
+      "Continue",
+      "Sign up",
+      "Continue with Google"
+    ],
+    "fonts": [
+      "ulp-font",
+      "Arial"
+    ],
+    "bodyBg": "rgb(0, 0, 0)",
+    "bodyBgImage": "none",
+    "host": "building-blocks-dev.eu.auth0.com"
+  },
+  {
+    "app": "geo-observatory",
+    "url": "https://building-blocks-dev.eu.auth0.com/u/login?state=hKFo2SBtaVRtSVRGaGVVcTRnR1lVS2x2UW9HZUxpcEZLOU1NbaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIE9RTXJTR3JKVjNTazVrSHBST1VQdlQxUC1GQ1I1cVZlo2NpZNkgY2xFUkFUVVJYaTFwUkNCNEliTmpINm81bXc4Z2pYR2c",
+    "title": "Log in | orbit-geo-observatory",
+    "hasPassword": true,
+    "buttons": [
+      "Learn More",
+      "Reset password",
+      "Continue",
+      "Sign up",
+      "Continue with Google"
+    ],
+    "fonts": [
+      "ulp-font",
+      "Arial"
+    ],
+    "bodyBg": "rgb(0, 0, 0)",
+    "bodyBgImage": "none",
+    "host": "building-blocks-dev.eu.auth0.com"
+  },
+  {
+    "app": "persona-hub",
+    "url": "https://building-blocks-dev.eu.auth0.com/u/login?state=hKFo2SBYMC1sYlF0RHlJcXhsTkI0UmNBc2NTNlk2NU5pWUFMS6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEowNEd4UVRYVFAzZGdsa0wwMmVrdmlIMkwwbnY0SHZGo2NpZNkgYXBHZFRqMThEeEsxTng4NEdyZEYwaVNGTWl1MVJPUDg",
+    "title": "Log in | orbit-persona-hub",
+    "hasPassword": true,
+    "buttons": [
+      "Learn More",
+      "Reset password",
+      "Continue",
+      "Sign up",
+      "Continue with Google"
+    ],
+    "fonts": [
+      "ulp-font",
+      "Arial"
+    ],
+    "bodyBg": "rgb(0, 0, 0)",
+    "bodyBgImage": "none",
+    "host": "building-blocks-dev.eu.auth0.com"
+  },
+  {
+    "app": "client-hub",
+    "url": "https://client-hub.building-bricks.online/",
+    "title": "Client Hub — Client Registry",
+    "hasPassword": false,
+    "buttons": [
+      "Sign in with Orbit",
+      "System\nMatch system",
+      "Light\nLight",
+      "Dark\nDark"
+    ],
+    "fonts": [
+      "\"Schibsted Grotesk\""
+    ],
+    "bodyBg": "rgb(242, 244, 241)",
+    "bodyBgImage": "none",
+    "host": "client-hub.building-bricks.online"
+  },
+  {
+    "app": "communication-hub",
+    "url": "https://communication-hub.building-bricks.online/",
+    "title": "Communication Hub — Task Execution & Decision Log",
+    "hasPassword": false,
+    "buttons": [
+      "Sign in with Orbit",
+      "How this works",
+      "System",
+      "Light",
+      "Dark"
+    ],
+    "fonts": [
+      "\"Schibsted Grotesk\""
+    ],
+    "bodyBg": "rgb(242, 244, 241)",
+    "bodyBgImage": "none",
+    "host": "communication-hub.building-bricks.online"
+  }
+]

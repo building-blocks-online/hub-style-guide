@@ -1,0 +1,175 @@
+{
+ "dialog": null,
+ "url": "https://communication-hub.building-bricks.online/#/how-it-works",
+ "title": "Communication Hub — Task Execution & Decision Log",
+ "themeAttr": "light",
+ "htmlClass": "",
+ "bodyBg": "rgb(242, 244, 241)",
+ "bodyBgImage": "none",
+ "htmlBgImage": "none",
+ "fonts": [
+  [
+   "Schibsted Grotesk",
+   71
+  ]
+ ],
+ "loadedFonts": [
+  "Schibsted Grotesk 400",
+  "Schibsted Grotesk 500",
+  "Schibsted Grotesk 600"
+ ],
+ "weights": [
+  [
+   "400",
+   38
+  ],
+  [
+   "500",
+   24
+  ],
+  [
+   "700",
+   8
+  ],
+  [
+   "600",
+   1
+  ]
+ ],
+ "sizes": [
+  [
+   "14px",
+   31
+  ],
+  [
+   "16px",
+   26
+  ],
+  [
+   "25px",
+   7
+  ],
+  [
+   "20px",
+   5
+  ],
+  [
+   "39px",
+   1
+  ],
+  [
+   "12px",
+   1
+  ]
+ ],
+ "radii": [
+  [
+   "50%",
+   5
+  ],
+  [
+   "999px",
+   2
+  ],
+  [
+   "8px",
+   1
+  ],
+  [
+   "1px",
+   1
+  ]
+ ],
+ "textColors": [
+  [
+   "rgb(19, 36, 32)",
+   49
+  ],
+  [
+   "rgb(91, 103, 95)",
+   21
+  ],
+  [
+   "rgb(10, 80, 98)",
+   1
+  ]
+ ],
+ "bgColors": [
+  [
+   "rgb(255, 255, 255)",
+   4
+  ],
+  [
+   "rgb(15, 108, 134)",
+   1
+  ],
+  [
+   "rgb(138, 93, 7)",
+   1
+  ],
+  [
+   "rgb(35, 104, 74)",
+   1
+  ],
+  [
+   "rgb(225, 238, 242)",
+   1
+  ],
+  [
+   "rgb(207, 213, 205)",
+   1
+  ]
+ ],
+ "shadows": {
+  "n": 0,
+  "ex": []
+ },
+ "blurs": {
+  "n": 0,
+  "ex": []
+ },
+ "gradients": {
+  "n": 0,
+  "ex": []
+ },
+ "bold700": {
+  "n": 8,
+  "ex": [
+   "strong \"and writes down every decision\"",
+   "strong \"who\"",
+   "strong \"Communication Hub\"",
+   "strong \"Verify log\"",
+   "strong \"Export\"",
+   "strong \"It will not invent client fact\""
+  ]
+ },
+ "lowContrast": {
+  "n": 0,
+  "ex": []
+ },
+ "chromaticButtons": [],
+ "unnamedButtons": [],
+ "imgsNoAlt": 0,
+ "unlabelledInputs": [],
+ "iconSets": {
+  "boxicons": 0,
+  "lucide": 0,
+  "material": 0,
+  "fontawesome": 0,
+  "inlineSvg": 0
+ },
+ "hubTokens": {
+  "kridt": true,
+  "skumring": false,
+  "ground": "#F2F4F1",
+  "action": "#0F6C86",
+  "anyHub": true
+ },
+ "h1": {
+  "text": "How Communication Hub works",
+  "size": "39px",
+  "weight": "600"
+ },
+ "hOverflow": false,
+ "docHeight": 3148
+}

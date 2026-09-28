@@ -1,0 +1,1497 @@
+{
+  "app": "prototype-hub",
+  "start": "https://prototype-hub.building-bricks.online/",
+  "landed": "https://prototype-hub.building-bricks.online/",
+  "signedIn": true,
+  "screens": [
+    {
+      "slug": "01-landing",
+      "nav": "landing",
+      "url": "https://prototype-hub.building-bricks.online/",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            37
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            22
+          ],
+          [
+            "400",
+            14
+          ],
+          [
+            "600",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            20
+          ],
+          [
+            "12px",
+            12
+          ],
+          [
+            "16px",
+            1
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ],
+          [
+            "28px",
+            1
+          ],
+          [
+            "20px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            13
+          ],
+          [
+            "3.35544e+07px",
+            7
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            19
+          ],
+          [
+            "rgb(19, 36, 32)",
+            7
+          ],
+          [
+            "rgb(10, 80, 98)",
+            4
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(35, 104, 74)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            5
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(19, 36, 32)",
+            3
+          ],
+          [
+            "rgb(242, 244, 241)",
+            3
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 19,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Dashboard",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "02-prototypes",
+      "nav": "Prototypes",
+      "url": "https://prototype-hub.building-bricks.online/prototypes",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/prototypes",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            29
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            15
+          ],
+          [
+            "500",
+            13
+          ],
+          [
+            "600",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            17
+          ],
+          [
+            "12px",
+            8
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            17
+          ],
+          [
+            "3.35544e+07px",
+            3
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            14
+          ],
+          [
+            "rgb(19, 36, 32)",
+            8
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            2
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(242, 244, 241)",
+            4
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(245, 247, 244)",
+            3
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.flex.h-9"
+        ],
+        "iconSets": {
+          "boxicons": 20,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Prototypes",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "03-tests",
+      "nav": "Tests",
+      "url": "https://prototype-hub.building-bricks.online/tests",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/tests",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            26
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            13
+          ],
+          [
+            "500",
+            11
+          ],
+          [
+            "600",
+            3
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            12
+          ],
+          [
+            "12px",
+            10
+          ],
+          [
+            "16px",
+            2
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            10
+          ],
+          [
+            "3.35544e+07px",
+            2
+          ],
+          [
+            "999px",
+            1
+          ],
+          [
+            "14px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            16
+          ],
+          [
+            "rgb(19, 36, 32)",
+            4
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            2
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            4
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ],
+          [
+            "rgb(245, 247, 244)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.flex.h-9"
+        ],
+        "iconSets": {
+          "boxicons": 13,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Tests",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "04-archetypes",
+      "nav": "Archetypes",
+      "url": "https://prototype-hub.building-bricks.online/personas",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/personas",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            132
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            105
+          ],
+          [
+            "400",
+            26
+          ],
+          [
+            "600",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "12px",
+            100
+          ],
+          [
+            "14px",
+            20
+          ],
+          [
+            "16px",
+            10
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            78
+          ],
+          [
+            "3.35544e+07px",
+            11
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            82
+          ],
+          [
+            "rgb(91, 103, 95)",
+            45
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            1
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(245, 247, 244)",
+            9
+          ],
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [
+          "input.flex.h-9"
+        ],
+        "iconSets": {
+          "boxicons": 39,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Archetypes",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 2453
+      }
+    },
+    {
+      "slug": "05-settings",
+      "nav": "Settings",
+      "url": "https://prototype-hub.building-bricks.online/settings",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/settings",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            31
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            15
+          ],
+          [
+            "400",
+            13
+          ],
+          [
+            "600",
+            4
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            16
+          ],
+          [
+            "12px",
+            10
+          ],
+          [
+            "16px",
+            3
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            14
+          ],
+          [
+            "3.35544e+07px",
+            2
+          ],
+          [
+            "14px",
+            2
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            15
+          ],
+          [
+            "rgb(19, 36, 32)",
+            8
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            2
+          ],
+          [
+            "rgb(255, 255, 255)",
+            2
+          ],
+          [
+            "rgb(35, 104, 74)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            5
+          ],
+          [
+            "rgb(19, 36, 32)",
+            2
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ],
+          [
+            "rgb(245, 247, 244)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 16,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Settings",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 969
+      }
+    },
+    {
+      "slug": "06-feedback",
+      "nav": "Feedback",
+      "url": "https://prototype-hub.building-bricks.online/feedback",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/feedback",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            24
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "500",
+            11
+          ],
+          [
+            "400",
+            10
+          ],
+          [
+            "600",
+            4
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            13
+          ],
+          [
+            "12px",
+            4
+          ],
+          [
+            "16px",
+            3
+          ],
+          [
+            "18px",
+            2
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            8
+          ],
+          [
+            "3.35544e+07px",
+            4
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(91, 103, 95)",
+            11
+          ],
+          [
+            "rgb(19, 36, 32)",
+            8
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            1
+          ],
+          [
+            "rgb(255, 255, 255)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            3
+          ],
+          [
+            "rgb(245, 247, 244)",
+            2
+          ],
+          [
+            "rgb(19, 36, 32)",
+            1
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 0,
+          "ex": []
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 13,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "Feedback",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 900
+      }
+    },
+    {
+      "slug": "07-how-it-works",
+      "nav": "How it works",
+      "url": "https://prototype-hub.building-bricks.online/how-it-works",
+      "darkFollowsSystem": true,
+      "darkBodyBg": "rgb(14, 27, 24)",
+      "audit": {
+        "url": "https://prototype-hub.building-bricks.online/how-it-works",
+        "title": "Prototype Hub",
+        "themeAttr": "",
+        "htmlClass": "",
+        "bodyBg": "rgb(242, 244, 241)",
+        "bodyBgImage": "none",
+        "htmlBgImage": "none",
+        "fonts": [
+          [
+            "Schibsted Grotesk",
+            91
+          ],
+          [
+            "JetBrains Mono",
+            1
+          ]
+        ],
+        "loadedFonts": [
+          "JetBrains Mono 400",
+          "Schibsted Grotesk 400",
+          "Schibsted Grotesk 500",
+          "Schibsted Grotesk 600",
+          "Schibsted Grotesk 700",
+          "boxicons 400"
+        ],
+        "weights": [
+          [
+            "400",
+            41
+          ],
+          [
+            "500",
+            34
+          ],
+          [
+            "700",
+            15
+          ],
+          [
+            "600",
+            2
+          ]
+        ],
+        "sizes": [
+          [
+            "14px",
+            57
+          ],
+          [
+            "12px",
+            17
+          ],
+          [
+            "16px",
+            9
+          ],
+          [
+            "20px",
+            6
+          ],
+          [
+            "15px",
+            1
+          ],
+          [
+            "11px",
+            1
+          ],
+          [
+            "39px",
+            1
+          ]
+        ],
+        "radii": [
+          [
+            "8px",
+            19
+          ],
+          [
+            "3.35544e+07px",
+            9
+          ],
+          [
+            "999px",
+            1
+          ]
+        ],
+        "textColors": [
+          [
+            "rgb(19, 36, 32)",
+            43
+          ],
+          [
+            "rgb(91, 103, 95)",
+            37
+          ],
+          [
+            "rgb(255, 255, 255)",
+            7
+          ],
+          [
+            "rgb(138, 148, 140)",
+            4
+          ],
+          [
+            "rgb(10, 80, 98)",
+            1
+          ]
+        ],
+        "bgColors": [
+          [
+            "rgb(255, 255, 255)",
+            16
+          ],
+          [
+            "rgb(19, 36, 32)",
+            4
+          ],
+          [
+            "rgb(245, 247, 244)",
+            2
+          ],
+          [
+            "rgb(207, 213, 205)",
+            2
+          ],
+          [
+            "rgb(242, 244, 241)",
+            1
+          ],
+          [
+            "rgb(247, 236, 211)",
+            1
+          ]
+        ],
+        "shadows": {
+          "n": 0,
+          "ex": []
+        },
+        "blurs": {
+          "n": 0,
+          "ex": []
+        },
+        "gradients": {
+          "n": 0,
+          "ex": []
+        },
+        "bold700": {
+          "n": 15,
+          "ex": [
+            "strong.text-foreground \"archetypes\"",
+            "strong.text-foreground \"scenario\"",
+            "strong.text-foreground \"success criteria\"",
+            "strong.text-foreground \"questions\"",
+            "strong.text-foreground \"holds\"",
+            "strong.text-foreground \"does not hold\""
+          ]
+        },
+        "lowContrast": {
+          "n": 4,
+          "ex": [
+            {
+              "el": "p.hub-nav-group",
+              "text": "Workspace",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "p.hub-nav-group",
+              "text": "Understanding it",
+              "ratio": 3.14,
+              "size": "12px"
+            },
+            {
+              "el": "span.truncate",
+              "text": "Search…",
+              "ratio": 3.14,
+              "size": "14px"
+            },
+            {
+              "el": "kbd.ml-auto.hidden",
+              "text": "Ctrl K",
+              "ratio": 3.14,
+              "size": "11px"
+            }
+          ]
+        },
+        "chromaticButtons": [],
+        "unnamedButtons": [
+          "button.flex.items-center"
+        ],
+        "imgsNoAlt": 0,
+        "unlabelledInputs": [],
+        "iconSets": {
+          "boxicons": 11,
+          "lucide": 0,
+          "material": 0,
+          "fontawesome": 0,
+          "inlineSvg": 0
+        },
+        "hubTokens": {
+          "kridt": true,
+          "skumring": false,
+          "ground": "#f2f4f1",
+          "action": "#0f6c86",
+          "anyHub": true
+        },
+        "h1": {
+          "text": "How it works",
+          "size": "39px",
+          "weight": "600"
+        },
+        "hOverflow": false,
+        "docHeight": 2787
+      }
+    }
+  ],
+  "narrow": {
+    "hOverflow": false,
+    "scrollWidth": 390
+  },
+  "logs": [
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    },
+    {
+      "type": "warning",
+      "text": "Analytics disabled: VITE_POSTHOG_KEY was not set at build time."
+    }
+  ]
+}
