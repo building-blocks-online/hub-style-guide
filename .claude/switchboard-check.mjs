@@ -20,6 +20,9 @@
  * The environment is passed through unchanged (ORBIT_SWITCHBOARD_AS from .claude/settings.json chooses
  * the profile). The child's stdout is copied; its stderr never is.
  *
+ * With `--prompt` (spec 183, a UserPromptSubmit hook) see PROMPT_INTERVAL_MS below: at most every 5 minutes, only what
+ * is new, and silence instead of every skip line.
+ *
  * ⚠️ It ALWAYS exits 0, prints nothing on stderr for an expected failure, and prints either the check's
  * own (bounded) output or ONE line: `Switchboard check skipped: <reason> — your inbox is unread.`
  * A hook that fails or floods would cost every orbit session its start; a skipped check costs one line.
@@ -27,16 +30,75 @@
  */
 
 import { spawn, spawnSync } from 'node:child_process';
-import { accessSync, constants, existsSync } from 'node:fs';
+import { accessSync, constants, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { delimiter, dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const DEADLINE_MS = 15_000;
-// Spec 173: ^0.15.0 is the first range whose `check` also writes ~/.orbit/switchboard-summary.json for the spec overview
-// (on 0.x a caret fixes the minor, so ^0.12.0 would never fetch it).
-export const NPX_PACKAGE = '@orbit/rig-cli@^0.15.0';
+// Spec 183: ^0.18.0 is the first range whose `check` takes `--prompt` (spec 173's ^0.15.0 added the summary file; on
+// 0.x a caret fixes the minor, so an older range would never fetch it).
+export const NPX_PACKAGE = '@orbit/rig-cli@^0.18.0';
 export const CHECK_ARGS = Object.freeze(['switchboard', 'check', '--hook']);
+
+/**
+ * Spec 183 — prompt mode (`--prompt`, a UserPromptSubmit hook). The same search for rig, but:
+ *   - nothing starts unless the identity's last check is at least PROMPT_INTERVAL_MS old, read from
+ *     ~/.orbit/switchboard-prompt.json — the file `rig switchboard check` writes (rig's prompt-record.ts; keep
+ *     promptKeyFromEnv in step with its promptKey);
+ *   - rig runs with `--prompt`, which prints only what is new, or nothing;
+ *   - every skip reason prints NOTHING (the session-start check already said why), and the run is bounded at 10 s.
+ */
+export const PROMPT_INTERVAL_MS = 5 * 60_000;
+export const PROMPT_DEADLINE_MS = 10_000;
+
+/** rig's promptKey from the environment alone: `app:<name>`, the participant name, else `default`. */
+export function promptKeyFromEnv(env = process.env) {
+  const asApp = env.ORBIT_SWITCHBOARD_AS_APP?.trim();
+  if (asApp) return `app:${asApp}`;
+  return env.ORBIT_SWITCHBOARD_AS?.trim() || 'default';
+}
+
+/** True unless this identity's last check is under PROMPT_INTERVAL_MS old. A missing or unreadable record is due. */
+export function promptDue({ env = process.env, home = homedir(), now = Date.now(), read = readFileSync } = {}) {
+  try {
+    const file = JSON.parse(read(join(home, '.orbit', 'switchboard-prompt.json'), 'utf8'));
+    const last = file?.[promptKeyFromEnv(env)]?.lastCheckAt;
+    if (typeof last !== 'number') return true;
+    return now - last >= PROMPT_INTERVAL_MS || now < last;
+  } catch {
+    return true;
+  }
+}
+
+/**
+ * Count a prompt-mode attempt that rig did not record itself (no rig, an old rig without `--prompt`, a run killed at the
+ * deadline): set this identity's `lastCheckAt`, keeping what it had shown, so the window starts and the next prompts do
+ * not each pay for a process. Rig's own record (written when it ran) is left alone. Never throws.
+ */
+export function stampPromptAttempt({ env = process.env, home = homedir(), now = Date.now() } = {}) {
+  try {
+    if (!promptDue({ env, home, now })) return; // rig recorded this attempt
+    const dir = join(home, '.orbit');
+    const path = join(dir, 'switchboard-prompt.json');
+    let file = {};
+    try {
+      const parsed = JSON.parse(readFileSync(path, 'utf8'));
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) file = parsed;
+    } catch {
+      /* missing or unreadable: start a new file */
+    }
+    const key = promptKeyFromEnv(env);
+    const shown = file[key] && typeof file[key].shown === 'object' && file[key].shown !== null ? file[key].shown : {};
+    file[key] = { lastCheckAt: now, shown };
+    mkdirSync(dir, { recursive: true });
+    const tmp = `${path}.${process.pid}.${now}.tmp`;
+    writeFileSync(tmp, JSON.stringify(file, null, 2) + '\n', { mode: 0o600 });
+    renameSync(tmp, path);
+  } catch {
+    /* the window simply does not start; the next prompt tries again */
+  }
+}
 /** Defensive cap on what is copied from the child; the check's own output is far smaller. */
 export const MAX_OUTPUT_BYTES = 16 * 1024;
 
@@ -255,10 +317,35 @@ export async function runSessionCheck({
   platform = process.platform,
   spawnImpl = spawn,
   list = candidates({ env, platform }),
-  deadlineMs = DEADLINE_MS,
+  prompt = false,
+  deadlineMs = prompt ? PROMPT_DEADLINE_MS : DEADLINE_MS,
   now = Date.now,
   kill = (child) => killTree(child, { platform }),
+  due = () => promptDue({ env, now: now() }),
+  stamp = () => stampPromptAttempt({ env, now: now() }),
 } = {}) {
+  // Prompt mode: inside the window nothing starts; every skip reason is silent.
+  if (prompt) {
+    if (!due()) return '';
+    const text = await runOnce({
+      env,
+      platform,
+      spawnImpl,
+      list,
+      deadlineMs,
+      now,
+      kill,
+      checkArgs: [...CHECK_ARGS, '--prompt'],
+    });
+    // An attempt rig did not record still counts (Gate 3, spec 183).
+    stamp();
+    // rig prints nothing when nothing is new; that, and every launcher skip line, is silence here.
+    return text.startsWith('Switchboard check skipped:') ? '' : text;
+  }
+  return runOnce({ env, platform, spawnImpl, list, deadlineMs, now, kill, checkArgs: CHECK_ARGS });
+}
+
+async function runOnce({ env, platform, spawnImpl, list, deadlineMs, now, kill, checkArgs }) {
   try {
     const deadline = now() + deadlineMs;
     let foundAny = false;
@@ -285,7 +372,7 @@ export async function runSessionCheck({
         if (probe.timedOut) return skipLine(TIMED_OUT);
         if (!/\bswitchboard\b/.test(probe.stdout)) continue;
       }
-      const result = await runChild(spawnImpl, invocation(c.file, [...c.prefix, ...CHECK_ARGS], { platform }), {
+      const result = await runChild(spawnImpl, invocation(c.file, [...c.prefix, ...checkArgs], { platform }), {
         cwd: c.cwd,
         env,
         timeoutMs: deadline - now(),
@@ -304,11 +391,12 @@ export async function runSessionCheck({
 }
 
 async function main() {
+  const prompt = process.argv.slice(2).includes('--prompt');
   let text;
   try {
-    text = await runSessionCheck();
+    text = await runSessionCheck({ prompt });
   } catch {
-    text = skipLine('the launcher failed');
+    text = prompt ? '' : skipLine('the launcher failed');
   }
   // Exit explicitly: a child killed at the deadline may leave a grandchild holding a pipe open.
   process.stdout.write(text, () => process.exit(0));

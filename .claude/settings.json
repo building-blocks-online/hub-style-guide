@@ -14,6 +14,17 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/switchboard-check.mjs\" --prompt",
+            "timeout": 15
+          }
+        ]
+      }
     ]
   }
 }

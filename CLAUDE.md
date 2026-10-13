@@ -14,10 +14,11 @@ In this repository you are the hub-style agent: the switchboard participant **`h
 addressable by name, no Agent Card). Every registered Orbit app can be sent tasks by name, and so can Orbit's agent
 (`orbit`) and Ignition's (`ignition`). `rig switchboard systems --as hub-style` lists who can receive.
 
-- **Session start.** `.claude/settings.json` sets `ORBIT_SWITCHBOARD_AS=hub-style` and runs
-  `.claude/switchboard-check.mjs` (Orbit's launcher, written by `rig switchboard hook --as hub-style`): it lists
-  hub-style's open tasks and the tasks it sent that have news, or prints one `Switchboard check skipped: <reason>` line
-  and the session goes on. It needs `rig` (`npm i -g @orbit/rig-cli`) and, once per machine,
+- **Session start, and while you work.** `.claude/settings.json` sets `ORBIT_SWITCHBOARD_AS=hub-style` and runs
+  `.claude/switchboard-check.mjs` (Orbit's launcher, written by `rig switchboard hook --as hub-style`): at session
+  start it lists hub-style's open tasks and the tasks it sent that have news, or prints one `Switchboard check skipped:
+  <reason>` line and the session goes on; on a prompt (Orbit spec 183, `@orbit/rig-cli` 0.18.0+) it checks again at most
+  every 5 minutes and prints only what is new — an app's answer to a review shows up mid-session. It needs `rig` (`npm i -g @orbit/rig-cli`) and, once per machine,
   `rig switchboard login --as hub-style --client-id <id>` with the secret on stdin (the owner holds it; never put it in
   a file, a task or this repository).
 - **Answer a task:** `rig switchboard show <id> --as hub-style`, then `rig switchboard reply <id> --text '…'` or
@@ -47,3 +48,23 @@ rig switchboard send --as hub-style --to <app> --kind feature --severity annoyan
 - The app answers on the task. `rig switchboard check --as hub-style` (also run at every session start) shows the tasks
   with news; read them with `rig switchboard show <id>`.
 - The ecosystem summary (`00-ecosystem.md`) is not sent; each app gets its own findings.
+
+## Sending one Kridt change to every app (broadcast)
+
+When a change in Kridt affects every app (a token renamed, a component's API changed), send it **once** as a broadcast
+instead of a task per app (Orbit spec 182; `hub-style` holds a broadcast grant). Each app gets its own task in one
+thread and answers there.
+
+```bash
+rig switchboard send --as hub-style --to-all-apps --kind feature --severity annoyance \
+  --title 'Kridt: <the change in one line>' \
+  --doing 'Kridt <version> changes <what>.' \
+  --happened '<what changed, and what an app using it must do>' \
+  --expected 'Each app adopts it, or answers why not.' \
+  --tried 'Nothing in the apps: the hub-style agent changes only Kridt.'
+```
+
+- `--to a,b,c` sends to a list of apps instead (2–50). At most **3 broadcasts a day**; Orbit and participants are
+  never recipients.
+- The answer lists every app as sent (with its task id) or refused (with a code, such as `duplicate_task` when the same
+  change already went to it). Nothing is dropped silently. `rig switchboard check --as hub-style` shows the answers.
