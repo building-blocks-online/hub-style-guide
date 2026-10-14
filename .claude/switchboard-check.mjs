@@ -10,12 +10,14 @@
  * implementation of the summary. Dependency-free (plain node:* modules), so it works in a worktree that
  * was never installed — the common case for an orbit session.
  *
- * Candidates, the first that exists and whose `--help` lists `switchboard` (each probed at most once):
+ * Candidates, in order. Each local one is asked `switchboard check --help` (spec 184): the first whose help lists every
+ * option this launcher knows (`--hook`, `--prompt`) runs; failing that, the first that lists what the mode passes
+ * (`--hook` at session start):
  *   1. <repo>/packages/rig-cli/dist/cli.js — this worktree's own build;
  *   2. `rig` on PATH;
- *   3. `npx --yes @orbit/rig-cli@^0.15.0`, spawned with the HOME directory as its working directory:
- *      inside the repository the workspace .npmrc sends @orbit to localhost:4873. That range always has
- *      the command, so npx is not probed (a probe would download the package twice).
+ *   3. only if neither can, `npx --yes @orbit/rig-cli@^0.18.0`, spawned with the HOME directory as its working
+ *      directory: inside the repository the workspace .npmrc sends @orbit to localhost:4873. That range always
+ *      can, so npx is not probed (a probe would download the package twice).
  *
  * The environment is passed through unchanged (ORBIT_SWITCHBOARD_AS from .claude/settings.json chooses
  * the profile). The child's stdout is copied; its stderr never is.
@@ -104,7 +106,40 @@ export const MAX_OUTPUT_BYTES = 16 * 1024;
 
 export const skipLine = (reason) => `Switchboard check skipped: ${reason} — your inbox is unread.\n`;
 export const NOT_INSTALLED = 'rig is not installed (npm i -g @orbit/rig-cli)';
-export const TOO_OLD = 'rig has no switchboard command (npm i -g @orbit/rig-cli@latest)';
+
+/**
+ * Spec 184: which rig runs. Each local candidate (the repository's build, then `rig` on PATH) is asked
+ * `switchboard check --help`. The first whose options include every flag in LAUNCHER_FLAGS runs; failing that, the
+ * first with every flag the mode passes. Preferring the full set at session start too matters: a rig without
+ * `--prompt` does not record the prompt window, so the next prompt would repeat the whole summary. Until 184 the
+ * first whose top-level `--help` listed `switchboard` ran, so a stale repository build shadowed a newer global rig
+ * (2026-10-14: a 0.15.0 build had no `--prompt`, which kept every orbit session's prompt check off after the global
+ * rig was 0.18.0). ⚠️ Not `--version`: rig reads its version from package.json at run time, so a stale build reports
+ * the checkout's version, not the version of the code that was built (Gate 3, 2026-10-14). The help is printed by the
+ * built code itself.
+ */
+/** Every option of `rig switchboard check` this launcher passes in some mode. */
+export const LAUNCHER_FLAGS = Object.freeze(['--hook', '--prompt']);
+export const tooOld = (flags) =>
+  `rig has no switchboard check ${flags.join(' ')} (npm i -g @orbit/rig-cli@latest)`;
+export const TOO_OLD = tooOld(['--hook']);
+
+/** The option flags in a command's help (lines that start with `-`, e.g. `  -a, --as <name>  …`). */
+export function helpOptions(text) {
+  const flags = new Set();
+  for (const line of String(text ?? '').split(/\r?\n/)) {
+    const head = line.trimStart();
+    if (!head.startsWith('-')) continue;
+    for (const token of head.split(/\s{2,}/)[0].split(/[\s,]+/)) if (token.startsWith('-')) flags.add(token);
+  }
+  return flags;
+}
+
+/** True when the help lists every flag (an argument starting with `--`) the check passes. */
+export function supports(helpText, checkArgs) {
+  const options = helpOptions(helpText);
+  return checkArgs.filter((a) => a.startsWith('--')).every((flag) => options.has(flag));
+}
 export const TIMED_OUT = 'timed out';
 export const NO_REGISTRY = "@orbit is not mapped to Orbit's registry here (set ORBIT_VERDACCIO_URL or run rig login)";
 /** How long reading npm's user config may take (counted before the check's own deadline). */
@@ -219,8 +254,8 @@ export function invocation(file, args, { platform = process.platform, execPath =
 
 /**
  * The candidates, in order, as `{ label, file, prefix, cwd, probe }` (`prefix`: arguments before the
- * check's own). `probe: true` means "only if its
- * `--help` lists switchboard".
+ * check's own). `probe: true` marks a local candidate asked `switchboard check --help` (spec 184; see
+ * LAUNCHER_FLAGS).
  */
 export function candidates({
   repoRoot = REPO_ROOT,
@@ -348,43 +383,63 @@ export async function runSessionCheck({
 async function runOnce({ env, platform, spawnImpl, list, deadlineMs, now, kill, checkArgs }) {
   try {
     const deadline = now() + deadlineMs;
-    let foundAny = false;
-    let npxSkipped = false;
-    for (const original of list) {
-      let c = original;
-      if (c.registry) {
-        // Never fall through to the public @orbit scope (see orbitRegistryFor).
-        const reg = c.registry();
-        if (!reg) {
-          npxSkipped = true;
-          continue;
-        }
-        c = { ...c, prefix: ['--yes', `--@orbit:registry=${reg}`, ...c.prefix.filter((a) => a !== '--yes')] };
-      }
-      foundAny = true;
-      if (c.probe) {
-        const probe = await runChild(spawnImpl, invocation(c.file, ['--help'], { platform }), {
-          cwd: c.cwd,
-          env,
-          timeoutMs: deadline - now(),
-          killTree: kill,
-        });
-        if (probe.timedOut) return skipLine(TIMED_OUT);
-        if (!/\bswitchboard\b/.test(probe.stdout)) continue;
-      }
-      const result = await runChild(spawnImpl, invocation(c.file, [...c.prefix, ...checkArgs], { platform }), {
+    // Spec 184: the first local candidate whose own `switchboard check --help` lists every LAUNCHER_FLAGS option,
+    // else the first that lists the mode's. A help that cannot be read (an old rig without the command exits non-zero
+    // with nothing on stdout) counts as neither.
+    const flags = checkArgs.filter((a) => a.startsWith('--'));
+    const wanted = [...new Set([...LAUNCHER_FLAGS, ...flags])];
+    let chosen = null;
+    let enough = null;
+    let localFound = false;
+    for (const c of list) {
+      if (!c.probe) continue;
+      localFound = true;
+      const probe = await runChild(spawnImpl, invocation(c.file, [...c.prefix, 'switchboard', 'check', '--help'], { platform }), {
         cwd: c.cwd,
         env,
         timeoutMs: deadline - now(),
         killTree: kill,
       });
-      if (result.timedOut) return skipLine(TIMED_OUT);
-      const out = result.stdout.trim();
-      if (out) return `${out}\n`;
-      if (result.error) return skipLine(`${c.label} could not be started`);
-      return skipLine(`${c.label} printed nothing (exit ${result.code})`);
+      if (probe.timedOut) return skipLine(TIMED_OUT);
+      if (supports(probe.stdout, wanted)) {
+        chosen = c;
+        break;
+      }
+      if (!enough && supports(probe.stdout, flags)) enough = c;
     }
-    return skipLine(foundAny ? TOO_OLD : npxSkipped ? NO_REGISTRY : NOT_INSTALLED);
+    chosen ??= enough;
+    // None can: npx (unprobed — its range always can), only when Orbit's registry is known.
+    let npxSkipped = false;
+    if (!chosen) {
+      for (const original of list) {
+        if (original.probe) continue;
+        let c = original;
+        if (c.registry) {
+          // Never fall through to the public @orbit scope (see orbitRegistryFor).
+          const reg = c.registry();
+          if (!reg) {
+            npxSkipped = true;
+            continue;
+          }
+          c = { ...c, prefix: ['--yes', `--@orbit:registry=${reg}`, ...c.prefix.filter((a) => a !== '--yes')] };
+        }
+        chosen = c;
+        break;
+      }
+    }
+    if (!chosen) return skipLine(localFound ? tooOld(flags) : npxSkipped ? NO_REGISTRY : NOT_INSTALLED);
+
+    const result = await runChild(spawnImpl, invocation(chosen.file, [...chosen.prefix, ...checkArgs], { platform }), {
+      cwd: chosen.cwd,
+      env,
+      timeoutMs: deadline - now(),
+      killTree: kill,
+    });
+    if (result.timedOut) return skipLine(TIMED_OUT);
+    const out = result.stdout.trim();
+    if (out) return `${out}\n`;
+    if (result.error) return skipLine(`${chosen.label} could not be started`);
+    return skipLine(`${chosen.label} printed nothing (exit ${result.code})`);
   } catch {
     return skipLine('the launcher failed');
   }
