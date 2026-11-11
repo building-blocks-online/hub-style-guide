@@ -25,6 +25,10 @@
  * With `--prompt` (spec 183, a UserPromptSubmit hook) see PROMPT_INTERVAL_MS below: at most every 5 minutes, only what
  * is new, and silence instead of every skip line.
  *
+ * With `--break` (spec 187, a Stop hook, the end of every turn) see BREAK_INTERVAL_MS below: the same, and when rig
+ * lists something that needs the agent's person, the text is handed back as `{"decision":"block","reason":…}` so the
+ * agent continues ONCE to bring it to them. Never when the agent is already continuing because of a Stop hook.
+ *
  * ⚠️ It ALWAYS exits 0, prints nothing on stderr for an expected failure, and prints either the check's
  * own (bounded) output or ONE line: `Switchboard check skipped: <reason> — your inbox is unread.`
  * A hook that fails or floods would cost every orbit session its start; a skipped check costs one line.
@@ -38,9 +42,9 @@ import { delimiter, dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const DEADLINE_MS = 15_000;
-// Spec 183: ^0.18.0 is the first range whose `check` takes `--prompt` (spec 173's ^0.15.0 added the summary file; on
-// 0.x a caret fixes the minor, so an older range would never fetch it).
-export const NPX_PACKAGE = '@orbit/rig-cli@^0.18.0';
+// Spec 187: ^0.20.0 is the first range whose `check` takes `--break` (183's ^0.18.0 added `--prompt`, 173's ^0.15.0 the
+// summary file; on 0.x a caret fixes the minor, so an older range would never fetch it).
+export const NPX_PACKAGE = '@orbit/rig-cli@^0.20.0';
 export const CHECK_ARGS = Object.freeze(['switchboard', 'check', '--hook']);
 
 /**
@@ -101,6 +105,111 @@ export function stampPromptAttempt({ env = process.env, home = homedir(), now = 
     /* the window simply does not start; the next prompt tries again */
   }
 }
+/**
+ * Spec 187 — break mode (`--break`, a Stop hook). Like prompt mode, with its own window and record,
+ * ~/.orbit/switchboard-break.json (rig's break-record.ts; same key as promptKeyFromEnv):
+ *   - nothing starts while Claude Code says `stop_hook_active` (the agent is already continuing because of a Stop
+ *     hook: never loop), or when the hook's stdin cannot be read;
+ *   - nothing starts unless the identity's last break check is at least BREAK_INTERVAL_MS old;
+ *   - rig runs with `--break`; its text, if any, is printed as `{"decision":"block","reason":<text>}`; every skip is
+ *     silence.
+ */
+export const BREAK_INTERVAL_MS = 5 * 60_000;
+export const BREAK_DEADLINE_MS = 10_000;
+export const STDIN_TIMEOUT_MS = 1_000;
+export const STDIN_MAX_BYTES = 64 * 1024;
+
+/** True unless this identity's last break check is under BREAK_INTERVAL_MS old. A missing or unreadable record is due. */
+export function breakDue({ env = process.env, home = homedir(), now = Date.now(), read = readFileSync } = {}) {
+  try {
+    const file = JSON.parse(read(join(home, '.orbit', 'switchboard-break.json'), 'utf8'));
+    const last = file?.[promptKeyFromEnv(env)]?.lastBreakAt;
+    if (typeof last !== 'number') return true;
+    return now - last >= BREAK_INTERVAL_MS || now < last;
+  } catch {
+    return true;
+  }
+}
+
+/** Count a break attempt rig did not record itself (as stampPromptAttempt), keeping the rest of the record. Never throws. */
+export function stampBreakAttempt({ env = process.env, home = homedir(), now = Date.now() } = {}) {
+  try {
+    if (!breakDue({ env, home, now })) return; // rig recorded this attempt
+    const dir = join(home, '.orbit');
+    const path = join(dir, 'switchboard-break.json');
+    let file = {};
+    try {
+      const parsed = JSON.parse(readFileSync(path, 'utf8'));
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) file = parsed;
+    } catch {
+      /* missing or unreadable: start a new file */
+    }
+    const key = promptKeyFromEnv(env);
+    const old = file[key] && typeof file[key] === 'object' ? file[key] : {};
+    file[key] = {
+      lastBreakAt: now,
+      reminded: old.reminded && typeof old.reminded === 'object' ? old.reminded : {},
+      shown: old.shown && typeof old.shown === 'object' ? old.shown : {},
+    };
+    mkdirSync(dir, { recursive: true });
+    const tmp = `${path}.${process.pid}.${now}.tmp`;
+    writeFileSync(tmp, JSON.stringify(file, null, 2) + '\n', { mode: 0o600 });
+    renameSync(tmp, path);
+  } catch {
+    /* the window simply does not start; the next break tries again */
+  }
+}
+
+/**
+ * Read the Stop hook's input from stdin, bounded in time and size. Resolves the parsed object, or null when it cannot
+ * be read — which the caller treats as "do nothing".
+ */
+export function readHookInput({ stdin = process.stdin, timeoutMs = STDIN_TIMEOUT_MS, maxBytes = STDIN_MAX_BYTES } = {}) {
+  return new Promise((resolvePromise) => {
+    let done = false;
+    let size = 0;
+    const chunks = [];
+    let timer;
+    const finish = (value) => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      try {
+        stdin.pause?.();
+      } catch {
+        /* nothing to pause */
+      }
+      resolvePromise(value);
+    };
+    timer = setTimeout(() => finish(null), timeoutMs);
+    try {
+      stdin.on('data', (c) => {
+        size += c.length;
+        if (size > maxBytes) return finish(null);
+        chunks.push(Buffer.from(c));
+      });
+      stdin.on('end', () => {
+        try {
+          const value = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+          finish(value && typeof value === 'object' && !Array.isArray(value) ? value : null);
+        } catch {
+          finish(null);
+        }
+      });
+      stdin.on('error', () => finish(null));
+      stdin.resume?.();
+    } catch {
+      finish(null);
+    }
+  });
+}
+
+/** What the launcher prints for rig's break text: the Stop hook's "continue once" answer, or nothing. */
+export function breakAnswer(text) {
+  const reason = String(text ?? '').trim();
+  return reason ? `${JSON.stringify({ decision: 'block', reason })}\n` : '';
+}
+
 /** Defensive cap on what is copied from the child; the check's own output is far smaller. */
 export const MAX_OUTPUT_BYTES = 16 * 1024;
 
@@ -119,7 +228,7 @@ export const NOT_INSTALLED = 'rig is not installed (npm i -g @orbit/rig-cli)';
  * built code itself.
  */
 /** Every option of `rig switchboard check` this launcher passes in some mode. */
-export const LAUNCHER_FLAGS = Object.freeze(['--hook', '--prompt']);
+export const LAUNCHER_FLAGS = Object.freeze(['--hook', '--prompt', '--break']);
 export const tooOld = (flags) =>
   `rig has no switchboard check ${flags.join(' ')} (npm i -g @orbit/rig-cli@latest)`;
 export const TOO_OLD = tooOld(['--hook']);
@@ -353,12 +462,32 @@ export async function runSessionCheck({
   spawnImpl = spawn,
   list = candidates({ env, platform }),
   prompt = false,
-  deadlineMs = prompt ? PROMPT_DEADLINE_MS : DEADLINE_MS,
+  brk = false,
+  hookInput = null,
+  deadlineMs = brk ? BREAK_DEADLINE_MS : prompt ? PROMPT_DEADLINE_MS : DEADLINE_MS,
   now = Date.now,
   kill = (child) => killTree(child, { platform }),
-  due = () => promptDue({ env, now: now() }),
-  stamp = () => stampPromptAttempt({ env, now: now() }),
+  due = () => (brk ? breakDue({ env, now: now() }) : promptDue({ env, now: now() })),
+  stamp = () => (brk ? stampBreakAttempt({ env, now: now() }) : stampPromptAttempt({ env, now: now() })),
 } = {}) {
+  // Break mode (spec 187): never while the agent is already continuing because of a Stop hook, nor without its input.
+  if (brk) {
+    if (!hookInput || hookInput.stop_hook_active === true) return '';
+    if (!due()) return '';
+    const text = await runOnce({
+      env,
+      platform,
+      spawnImpl,
+      list,
+      deadlineMs,
+      now,
+      kill,
+      checkArgs: [...CHECK_ARGS, '--break'],
+    });
+    // An attempt rig did not record still counts.
+    stamp();
+    return text.startsWith('Switchboard check skipped:') ? '' : breakAnswer(text);
+  }
   // Prompt mode: inside the window nothing starts; every skip reason is silent.
   if (prompt) {
     if (!due()) return '';
@@ -446,12 +575,15 @@ async function runOnce({ env, platform, spawnImpl, list, deadlineMs, now, kill, 
 }
 
 async function main() {
-  const prompt = process.argv.slice(2).includes('--prompt');
+  const args = process.argv.slice(2);
+  const prompt = args.includes('--prompt');
+  const brk = args.includes('--break');
   let text;
   try {
-    text = await runSessionCheck({ prompt });
+    const hookInput = brk ? await readHookInput() : null;
+    text = await runSessionCheck({ prompt, brk, hookInput });
   } catch {
-    text = prompt ? '' : skipLine('the launcher failed');
+    text = prompt || brk ? '' : skipLine('the launcher failed');
   }
   // Exit explicitly: a child killed at the deadline may leave a grandchild holding a pipe open.
   process.stdout.write(text, () => process.exit(0));
