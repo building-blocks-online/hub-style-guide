@@ -68,12 +68,27 @@
   font-size: 1.1rem;
 }
 
+/* The sidebar stays in view while the page scrolls: the page is the one
+   scroll container, and the nav never scrolls away and leaves an empty
+   column. It scrolls on its own only when its own items outgrow the window. */
 .hub-shell__nav {
   grid-area: nav;
   border-right: 1px solid var(--hub-color-line);
   display: flex;
   flex-direction: column;
   min-height: 0;
+}
+@media (min-width: 721px) {
+  .hub-shell__nav {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  /* A framed demo is its own small sheet: the nav just fills it. */
+  .hub-shell--framed .hub-shell__nav { position: static; height: auto; align-self: stretch; }
 }
 /* The app mark and the app's name, on one line. The tagline belongs on the
    sign-in sheet, not here. */

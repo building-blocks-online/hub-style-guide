@@ -37,8 +37,10 @@ item is a solid ink block — the same black as the primary button, which is not
 a coincidence: it means "here" and "do this" in the same voice.
 
 Sidebar nav, not top nav. These apps have more destinations than a top bar
-holds, and a vertical list survives a name getting longer. Below 720px it
-becomes a drawer (`data-open="true"`) and the search pill hides.
+holds, and a vertical list survives a name getting longer. On wider screens
+it is sticky and one window tall, so it stays in view however far the page
+scrolls; it scrolls on its own only when its items outgrow the window. Below
+720px it becomes a drawer (`data-open="true"`) and the search pill hides.
 
 ## Regions
 
