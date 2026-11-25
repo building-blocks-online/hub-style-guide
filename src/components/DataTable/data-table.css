@@ -1,7 +1,7 @@
 /* No zebra striping — the hairline already separates rows.
    Numeric columns are right-aligned and tabular. */
 
-.hub-table-scroll { overflow-x: auto; }
+/* .hub-table-scroll and its sticky-header rules live in layout.css. */
 
 .hub-table {
   width: 100%;

@@ -269,6 +269,23 @@ button.hub-avatar { cursor: pointer; }
   z-index: 1;
 }
 
+/* A table too wide for its column scrolls sideways in .hub-table-scroll.
+   Any overflow makes that wrapper a scroll container in both directions,
+   so a sticky header would pin to the wrapper, which never scrolls down,
+   and top: bar height would push it over its own first rows. Inside the
+   wrapper the header is therefore not sticky: it cannot be, without a
+   second vertical scroll container.
+   .hub-table-scroll--narrow scrolls sideways only below 720px. Above that
+   it is not a scroll container, so the header pins to the page. Use it for
+   every table that fits the page width on a laptop, which is most of them;
+   keep plain .hub-table-scroll for the ones that do not. */
+.hub-table-scroll { overflow-x: auto; }
+.hub-table-scroll .hub-table th { position: static; }
+@media (min-width: 721px) {
+  .hub-table-scroll--narrow { overflow-x: visible; }
+  .hub-page--table .hub-table-scroll--narrow .hub-table th { position: sticky; }
+}
+
 /* ── 3. Dashboard page ─────────────────────────────────────── */
 
 /* Summary first, then detail. The rows of the sheet touch. */

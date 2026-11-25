@@ -17,11 +17,17 @@ export interface DataTableProps {
   rows: Row[];
   /** Says where the numbers come from. Every table of real figures needs one. */
   caption?: string;
+  /**
+   * The table is wider than the page on a laptop, so it always scrolls
+   * sideways and its header scrolls away with the page. Leave it off and the
+   * table scrolls sideways only on phones, with a pinned header above 720px.
+   */
+  wide?: boolean;
 }
 
-export function DataTable({ columns, rows, caption }: DataTableProps) {
+export function DataTable({ columns, rows, caption, wide = false }: DataTableProps) {
   return (
-    <div className="hub-table-scroll">
+    <div className={wide ? 'hub-table-scroll' : 'hub-table-scroll hub-table-scroll--narrow'}>
       <table className="hub-table">
         {caption ? <caption className="hub-table__caption">{caption}</caption> : null}
         <thead>

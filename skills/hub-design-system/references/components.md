@@ -298,8 +298,10 @@ Defaults to bottom-centre because React Flow owns both bottom corners.
 ```
 
 No zebra striping. Numeric columns right-aligned and tabular. A "who" column
-gets an initials disc (`.hub-avatar`). Wide tables scroll inside their own
-container.
+gets an initials disc (`.hub-avatar`). Wrap a table in
+`.hub-table-scroll.hub-table-scroll--narrow` (sideways scroll on phones, a
+pinned header above 720px); only a table too wide for a laptop gets plain
+`.hub-table-scroll`, and its header does not pin. See `layout.md`, *Table page*.
 
 ## Bar chart
 

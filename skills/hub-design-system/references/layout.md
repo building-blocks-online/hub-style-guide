@@ -107,6 +107,15 @@ a page head with the primary action on the right, filters directly above the
 rows, and a sticky `thead` at `top: var(--hub-height-bar)`. **The page header
 does not also stick** — two sticky bands eat a laptop screen.
 
+A sideways scroller and a pinned header do not mix: any overflow makes the
+wrapper a scroll container in both directions, and the header pins to that
+instead of the page. So wrap the table in
+`.hub-table-scroll.hub-table-scroll--narrow`: it scrolls sideways only below
+720px, and above that the header pins to the page. A table that does not fit
+a laptop either drops columns or uses plain `.hub-table-scroll`, where it
+scrolls sideways at every width and its header scrolls away with the page.
+Never your own `overflow-x: auto` wrapper around a sticky header.
+
 ### 3. Dashboard page
 
 Summary first, then detail — as rows of the sheet, not cards on a page.
