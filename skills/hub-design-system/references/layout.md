@@ -164,8 +164,11 @@ Set with `data-density="compact"`. No third density, no per-user switch.
 
 **One scroll container per page.** Reading and table pages: the document
 scrolls. Canvas pages: the document does not scroll; the inspector does. A
-wide table scrolls sideways inside its own container. Two nested scrollbars is
-a bug. Sticky is spent on exactly two things: the bar, and a table's `thead`.
+table that is too wide scrolls sideways inside `.hub-table-scroll` — on phones
+only, unless it is too wide for a laptop (see *Table page*). Two nested
+scrollbars is a bug. Sticky is spent on exactly three things: the bar, the
+sidebar above 720px, and a table's `thead`. Nothing else pins — not a page
+head, not a filter row.
 
 ## Where things sit
 

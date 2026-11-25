@@ -48,7 +48,7 @@ and the action colour. A third colour on a screen is decoration.
 `.hub-page--reading`, inside `.hub-shell` (sidebar with grouped nav and an ink
 block for the current item; a bar with breadcrumb, search pill, round icon
 buttons). Decide which element owns the scroll before writing CSS. Sticky is
-spent on the bar and a table's `thead`.
+spent on the bar, the sidebar above 720px, and a table's `thead`.
 
 Breakpoints are literal constants — a media query cannot read a custom
 property: **720px** (one column, nav becomes a drawer) and **1100px** (a side

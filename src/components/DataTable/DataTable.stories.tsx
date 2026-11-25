@@ -13,8 +13,10 @@ const meta = {
         component:
           'No zebra striping — the hairline already separates rows. Numeric columns are ' +
           'right-aligned with tabular figures so digits stack. Mono is for characters that ' +
-          'must line up, never for labels that want to look technical. Wide tables scroll ' +
-          'inside their own container so the page never scrolls sideways.',
+          'must line up, never for labels that want to look technical. On a phone the table ' +
+          'scrolls sideways inside its own container so the page never does; above 720px ' +
+          'it does not, so the header can pin under the bar. Set `wide` only for a table ' +
+          'too wide for a laptop: it always scrolls sideways and its header scrolls away.',
       },
     },
   },

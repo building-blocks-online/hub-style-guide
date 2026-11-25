@@ -215,8 +215,8 @@ family of apps look unrelated.
 property: **720px** (one column, nav becomes a drawer) and **1100px** (a side
 panel becomes an overlay). Break where the content stops fitting.
 
-**One scroll container per page.** Sticky is spent on the bar and a table's
-`thead`. **Two densities**: comfortable for reading and forms, compact for
+**One scroll container per page.** Sticky is spent on the bar, the sidebar
+above 720px, and a table's `thead`. **Two densities**: comfortable for reading and forms, compact for
 tables, canvases and dashboards.
 
 ## Icons

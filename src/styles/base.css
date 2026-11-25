@@ -20,7 +20,8 @@
 .hub-stack { display: flex; flex-direction: column; gap: var(--hub-space-4); align-items: flex-start; }
 .hub-row   { display: flex; flex-wrap: wrap; gap: var(--hub-space-3); align-items: center; }
 
-.hub-scroll-x { overflow-x: auto; }
+/* No generic sideways scroller: a table gets .hub-table-scroll (layout.css),
+   which knows about its sticky header. */
 
 /* .hub-avatar lives in layout.css with the rest of the shell furniture,
    so apps that import layout.css get it too. */
